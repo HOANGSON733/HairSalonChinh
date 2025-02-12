@@ -14,7 +14,7 @@ const galleryItems: GalleryItem[] = [
     id: 1,
     title: "Kiểu tóc Layer Nam",
     category: "hairstyles",
-    image: "https://images.pexels.com/photos/3993441/pexels-photo-3993441.jpeg",
+    image: "https://file.hstatic.net/1000284478/file/uon-toc-layer-nam-1_516938ec6af04fbf8ce010cf45de2ddc.png",
     date: ""
   },
   {
@@ -35,7 +35,7 @@ const galleryItems: GalleryItem[] = [
     id: 4,
     title: "Salon Interior",
     category: "facility",
-    image: "https://images.pexels.com/photos/3993440/pexels-photo-3993440.jpeg",
+    image: "https://scontent.fsgn2-3.fna.fbcdn.net/v/t39.30808-6/476771196_1123830425931096_453136717137559003_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEyaEX0GzjtlrdR5G8sQxFayrxh3gws_X3KvGHeDCz9fW5egvsym4T2XywzxR0UlFafFy9hKUBcewoNuQRgjmEx&_nc_ohc=lXVSrlSMd2QQ7kNvgFbd-50&_nc_oc=Adj7zrHFqpCd-hF10JfH2lvuRQJs2sHcB7JK6ji4o3Q4OVVUfno8ZPJWi6n2zW_rOhk&_nc_zt=23&_nc_ht=scontent.fsgn2-3.fna&_nc_gid=ADeQOCQ83CxWfbdwOlOuW7K&oh=00_AYCffL3O3iPl-6g0KT9bLdzGmiWJ_sRUNp8Lv9Y2orwjXg&oe=67B21602",
     date: ""
   },
   {
@@ -63,7 +63,7 @@ const galleryItems: GalleryItem[] = [
     id: 8,
     title: "Thiết bị hiện đại",
     category: "facility",
-    image: "https://images.pexels.com/photos/1625833/pexels-photo-1625833.jpeg",
+    image: "https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/449498247_2447596182091845_4354571207738612105_n.jpg?stp=cp6_dst-jpg_tt6&_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHLOg9F36_I00ZKbt0jdwkCw15q_WNmNgLDXmr9Y2Y2AskOXgudXnsP5WMAqi1YgXIkbOw_LskkxYEYUTEoJWDt&_nc_ohc=HdYlCXoE1egQ7kNvgHLM5Wp&_nc_oc=AdgFGvRHXEzZXLEPeMvJO5_Zj4ItKjK0UGDBBp8BpVNY4Tr-KB3MrMpvTY6NPXjgwhI&_nc_zt=23&_nc_ht=scontent.fsgn2-8.fna&_nc_gid=A5rDx_8E0m9y9nRIgswCq7k&oh=00_AYAD_eajdLSptjFzWAJ0SRGMmO7Vvx2YQyMF_iDQml0Xsg&oe=67B21AAF",
     date: ""
   },
   {
@@ -84,14 +84,14 @@ const galleryItems: GalleryItem[] = [
     id: 11,
     title: "Sự kiện khuyến mãi",
     category: "events",
-    image: "https://images.pexels.com/photos/3784307/pexels-photo-3784307.jpeg",
+    image: "https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/402092930_2296625740522224_6205989509358852740_n.jpg?_nc_cat=108&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHeHzoudyOP0V0hbQrbmHnlcinSTPV5uQJyKdJM9Xm5As8LxHGRTLnKC6LjiUvD3wC2d78wpYkquwT18GTIXznd&_nc_ohc=j-0MAqP-NsMQ7kNvgGX6BsP&_nc_oc=AdiJIpJs8Kc2xKIX0yResDL6UEs3-eF3a7j250v1P1yPYfk5tvoSZbpnnNanYn77ZkE&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=AvQ1w3vwz6qeyCWYslVII_o&oh=00_AYAK-xrTQvnG3qKHLikYhjCMz-sCoCNp_x59r56Hjp46dw&oe=67B24788",
     date: ""
   },
   {
     id: 12,
     title: "Không gian sang trọng",
     category: "facility",
-    image: "https://images.pexels.com/photos/3993244/pexels-photo-3993244.jpeg",
+    image: "https://scontent.fsgn2-8.fna.fbcdn.net/v/t39.30808-6/478577436_1123819039265568_6352970398484582848_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHnAnBzPgwwQ__e4EC0zDmHBPf6YJznBgsE9_pgnOcGCwyfXwo-9GFLJ4-nizdweLqPqd0qWPN9ipSO1w-LRjUO&_nc_ohc=MEDxfz0vTA0Q7kNvgHnokmH&_nc_oc=AdjufFeqdLJoHqV6JfRVcDP-rzV34juuA87gnvmGZ8QKTcdOiOhwJZnvHp9t5DEsDJg&_nc_zt=23&_nc_ht=scontent.fsgn2-8.fna&_nc_gid=AA2__JottHeh6CyNwy5AYFl&oh=00_AYBylYpKdV7D_Q1OrzQ7TcHoQm7Zp2cbeyu9hVMVKGpqYQ&oe=67B21A3B",
     date: ""
   },  
   {
@@ -100,7 +100,50 @@ const galleryItems: GalleryItem[] = [
     category: "hairstyles",
     image: "https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/471381351_1094097562237716_3253643860818613988_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHlFBHEu4Lk2wXLT0PDm4YJuhe1BpKTAaa6F7UGkpMBpr2geAuywV6V4Q9zENajnMo4hWKr_qXjFw8iuK9CvYhN&_nc_ohc=eRMH-ErVJS4Q7kNvgE0tZ3R&_nc_oc=AdhpxjswwUOd707ZrJXs41fGlfVz_PEZ020kRWG7mysaepbP8mSRyGK6Cks1kYgxZvE&_nc_zt=23&_nc_ht=scontent.fsgn2-5.fna&_nc_gid=A2U_md614vAqKckaugtB8hj&oh=00_AYCeEudgKKQhfs6tsX8DKcHIha5JikHr27IRoKRyxgFq0Q&oe=67B1E9A2",
     date: ""
-  },  
+  }, 
+  {
+    id: 13,
+    title: "Sự kiện salon",
+    category: "events",
+    image: "https://scontent.fsgn2-5.fna.fbcdn.net/v/t39.30808-6/475756993_1116657373315068_7382452410193667728_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGipuUELW8LELHeFyuicGFWpbXXHxyXDkmltdcfHJcOSYobG-bL06EpvA3AbCQkdl816aj9Dp0kXj9WYYBk3pYw&_nc_ohc=GnE02wuch6AQ7kNvgENVIwy&_nc_oc=AdhEuF0wsUbEvLvpWoZfvycyxya_ImfDuuTWW8TTIx2vgocbunqaq-EQqwC1K5641OQ&_nc_zt=23&_nc_ht=scontent.fsgn2-5.fna&_nc_gid=AqFtvFYmFXHpTCkyGU6CQZ9&oh=00_AYCRWYFipGwq71rZzH5WRrkjEgdsg0uF3qHmiV02Z8a37Q&oe=67B22D7B",
+    date: ""
+  }, 
+  {
+    id:14,
+    title: "Tóc uốn xoăn",
+    category: "hair",
+    image: "https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-6/475669603_1115567516757387_1627835635595175727_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeE1-Cqxj8Zq9ql2uxnFuvFCHMPYtgxAQUMcw9i2DEBBQ5qusKq6twvD9qwuxg-M5bKwaNNWfzIczxas5Jpuazv5&_nc_ohc=NWsl5ZuM0skQ7kNvgFJjnX_&_nc_oc=AdhmDcSS7z58kAiaACmix4qWnsPCOT1fD3XMa2bO8lhnh5ZK7dnmj-V62__FPmI3BYQ&_nc_zt=23&_nc_ht=scontent.fsgn2-6.fna&_nc_gid=AHf4sZe35Q1sLUh5J7ZLons&oh=00_AYBwjMIHSna-RITv0vEIJzYKTKQatin4W8Ldj1HnCbEUvw&oe=67B21CDE",
+    date: ""
+    },
+  {
+    id:15,
+    title: "Tóc uốn xoăn",
+    category: "hair",
+    image: "https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-6/475365358_1115567183424087_3253213399835614457_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeHL8KHObujixI11B8gZce9pDtbR2-qJ06MO1tHb6onTo6UL_LBIb2MWYrfi4EprQ3H_xYhEB_FPdZcUXgTGB52O&_nc_ohc=wPyDoNpYr6wQ7kNvgHpkngY&_nc_oc=AdhILs4lNZKJ8knq-oKpIIs7ebEheE-wARb70BOxnsYzwn1j9NMOb9SRDe26RBku2Gg&_nc_zt=23&_nc_ht=scontent.fsgn2-6.fna&_nc_gid=AP1K4CmGo3KQgWO-1jp8rCG&oh=00_AYCvy55DMC8Fk2CmqShvabef3bn6wIfyCQ3g-9dySShQUw&oe=67B233FA",
+    date: ""
+  },
+    {
+    id:16,
+    title: "Tóc uốn xoăn",
+    category: "hair",
+    image: "https://scontent.fsgn2-6.fna.fbcdn.net/v/t39.30808-6/475761484_1115567220090750_4425599133334812749_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeElFetARza74MiD_qq5OJkXatueptffTAZq256m199MBu429qhc34PBWzGTBpBGjNCTUltN-ZPS5pKNSIIDSC69&_nc_ohc=d0MIt43xZw4Q7kNvgENsAtl&_nc_oc=AdjvUBSbg7iGEZWMHm9yvmAarbaQstgAcUmGyQUzSkU9SfQOWZti2zMhF0sUNwwwlQc&_nc_zt=23&_nc_ht=scontent.fsgn2-6.fna&_nc_gid=Abj4a2nheNAhoSHKikKLK4_&oh=00_AYDMgGhvueaj9WZbikcAJenvzbp1Q3SY-v-o9A6z1ueRhw&oe=67B2329B",
+    date: ""
+    },
+    {
+      id:17,
+      title: "Tóc uốn xoăn",
+      category: "academy",
+      image: "https://scontent.fsgn2-4.fna.fbcdn.net/v/t39.30808-6/476804205_1123818355932303_1993021348578528107_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeGi3syapamy8PDp3dTphuu9fwnDFDbhb6d_CcMUNuFvp4jpsBwhOTeBn8rhfB0nXXayeRZVuwFm5vff1Y-IuBY9&_nc_ohc=YZT0CO0EsrQQ7kNvgFcRjVC&_nc_oc=AdiwxWZ1ksvOvzeysOWEBYq4zrDU2zyiMAmf5g8J2bLKwZixENlndjt670o_WDp9Rk0&_nc_zt=23&_nc_ht=scontent.fsgn2-4.fna&_nc_gid=AEj-wYOo3H-ZvFSf08USUpw&oh=00_AYCFEPCc9xCvV3ZiWNIVVcIyoVVdEUyvAL2Ch5p5wlTIwA&oe=67B23076",
+      date: ""
+      },
+    {
+      id: 18,
+      title: "Sự kiện khai trương",
+      category: "events",
+      image: "https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/462843707_2537131133138349_8036296803202593588_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeEMKmZWTHElq3rwIAVqGEp1HQYxXQVTehcdBjFdBVN6Fwv7S1AJ993WCBiCoDMXzrT-9BtBFF6_0jFFEj6PedFP&_nc_ohc=E-APyD5Umy4Q7kNvgH3wKKz&_nc_oc=Adj4XGeAHMOdMTV4r0MtPN8GKhZu7AUSDr50Fi5deOGSNasA-s4RGJkXN6ll5_2H_jg&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=AK9IBKoWScngBsW8hlvmEfz&oh=00_AYAcBXzIoDdA2chaYazjPASGhI_7U7fkOLYyGbrLKI_v2g&oe=67B24283",
+      date: ""
+    },
+
 ];
 
 export default function GalleryContent() {
@@ -114,7 +157,7 @@ export default function GalleryContent() {
       <div className="text-center">
         <h1 className="text-3xl font-bold mb-4">GALLERY</h1>
         <p className="text-gray-600 max-w-2xl mx-auto">
-          Khám phá không gian và dịch vụ của Min's Hair & Skin qua những hình ảnh ấn tượng.
+          Khám phá không gian và dịch vụ của Hair Salon Chính's qua những hình ảnh ấn tượng.
         </p>
       </div>
 
@@ -135,10 +178,10 @@ export default function GalleryContent() {
         ))}
       </div>
 
-      <Modal visible={!!selectedImage} onCancel={() => setSelectedImage(null)} footer={null} centered>
+      <Modal visible={!!selectedImage} onCancel={() => setSelectedImage(null)} footer={null} centered width={800} >
         {selectedImage && (
-          <div className="space-y-4 text-center">
-            <Image src={selectedImage.src || "/placeholder.svg"} alt={selectedImage.title} width={500} height={350} />
+          <div className="space-y-2 text-center p-1">
+            <Image src={selectedImage.src || "/placeholder.svg"} alt={selectedImage.title} width={800} height={800} />
             <h3 className="text-lg font-medium">{selectedImage.title}</h3>
           </div>
         )}

@@ -15,8 +15,11 @@ export interface GalleryItem {
     { value: "all", label: "Tất cả" },
     { value: "hairstyles", label: "Kiểu tóc" },
     { value: "services", label: "Dịch vụ" },
+    { value: "hair", label: "Tóc uốn" },
+    { value: "academy", label: "Phun xăm thẩm mỹ" },
     { value: "facility", label: "Cơ sở vật chất" },
     { value: "events", label: "Sự kiện" },
+
   ]
   
   
