@@ -8,8 +8,9 @@ import MainFooter from "@/components/main-footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Min's Hair & Skin",
+  title: "Hair Salon Chinh",
   description: "Professional Hair & Skin Care Services",
+
 }
 
 export default function RootLayout({
@@ -19,6 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <link rel="icon" href="/Logo.png" sizes="any" />
       <body className={inter.className}>
         <TopBanner />
         <Navbar />

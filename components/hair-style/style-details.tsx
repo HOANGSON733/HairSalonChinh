@@ -12,7 +12,7 @@ import { Minus, Plus, Star } from "lucide-react"
 const products:any = {
   ["1"]: {
     id: 1,
-    name: "Sáp Reuzel Red Pomade Phong Cách Cổ Điển",
+    name: "Kiểu tóc Mohican",
     price: "228,000đ",
     originalPrice: "250,000đ",
     image: "https://clmensstore.com/wp-content/uploads/2020/03/Reuzel-Red-Pomade-2.png",
@@ -20,10 +20,10 @@ const products:any = {
       "https://clmensstore.com/wp-content/uploads/2020/03/Reuzel-Red-Pomade-2.png", 
       "https://down-vn.img.susercontent.com/file/051c705151482421842bc68ceef55f23", 
       "https://clmensstore.com/wp-content/uploads/2020/03/DSC_0031-1-1024x683.jpg.webp"],
-    category: "san-pham",
+    category: "tao-kieu-toc",
     description:
-      "Sáp vuốt tóc Reuzel Red Pomade với độ bóng cao, giữ nếp cực tốt, mang đến phong cách cổ điển sang trọng.",
-    features: ["Độ bóng cao", "Giữ nếp mạnh", "Dễ gội rửa", "Hương thơm nam tính"],
+      "Sáp tạo kiểu tóc Reuzel Red Pomade với độ bóng cao, giữ nếp cực tốt, mang đến phong cách tạo kiểu tóc cổ điển sang trọng.",
+    features: ["Tạo kiểu bóng cao", "Giữ nếp mạnh", "Dễ gội rửa", "Hương thơm nam tính"],
     specifications: {
       weight: "113g",
       origin: "Hà Lan",
@@ -34,7 +34,7 @@ const products:any = {
     },
     usage: [
       "Lấy một lượng sáp vừa đủ, xoa đều trong lòng bàn tay",
-      "Vuốt từ gốc đến ngọn tóc",
+      "Tạo kiểu từ gốc đến ngọn tóc",
       "Có thể sử dụng với tóc ẩm hoặc khô",
       "Tạo kiểu theo ý muốn",
     ],
@@ -46,7 +46,7 @@ const products:any = {
   },
   ["2"]: {
     id: 2,
-    name: "Sáp vuốt tóc Blumaan Cavalier Clay",
+    name: "Sáp Tạo Kiểu Tóc Blumaan Cavalier Clay",
     price: "320,000đ",
     originalPrice: "350,000đ",
     image: "https://product.hstatic.net/1000246396/product/ngua_master.jpg",
@@ -54,10 +54,10 @@ const products:any = {
       "https://myphamtocnam.com/images/attachment/5432sap-vuot-toc-hai-phong.jpg", 
       "https://bizweb.dktcdn.net/thumb/grande/100/113/970/files/blumaan-cavalier-jpg.jpg?v=1530780901311", 
       "https://down-vn.img.susercontent.com/file/c6b46d4e822bea7eb4cbc145609b4213"],
-    category: "san-pham",
+    category: "tao-kieu-toc",
     description:
       "Blumaan Cavalier Clay là sản phẩm tạo kiểu tóc cao cấp với độ giữ nếp mạnh mẽ, giúp tạo kiểu linh hoạt và duy trì suốt cả ngày.",
-    features: ["Giữ nếp mạnh", "Tạo độ phồng tự nhiên", "Không gây bết dính", "Thành phần dưỡng tóc"],
+    features: ["Tạo kiểu mạnh mẽ", "Độ phồng tự nhiên", "Không gây bết dính", "Dưỡng tóc"],
     specifications: {
       weight: "74g",
       origin: "Mỹ",
@@ -68,9 +68,9 @@ const products:any = {
     },
     usage: [
       "Lấy một lượng sáp nhỏ, xoa đều trong lòng bàn tay",
-      "Vuốt đều lên tóc từ gốc đến ngọn",
-      "Tạo kiểu theo ý muốn",
-      "Có thể kết hợp với máy sấy để tối ưu hiệu quả",
+      "Tạo kiểu đều từ gốc đến ngọn",
+      "Định hình kiểu tóc theo ý muốn",
+      "Có thể kết hợp máy sấy để tối ưu hiệu quả",
     ],
     inStock: true,
     rating: 4.9,
@@ -80,7 +80,7 @@ const products:any = {
   },
   ["3"]: {
     id: 3,
-    name: "Sáp vuốt tóc By Vilain Gold Digger",
+    name: "Sáp Tạo Kiểu Tóc By Vilain Gold Digger",
     price: "450,000đ",
     originalPrice: "490,000đ",
     image: "https://product.hstatic.net/1000246396/product/reuzel-fiber-pomade_945067b3694e41e992dde2e50eb2df82_master.jpg",
@@ -88,10 +88,10 @@ const products:any = {
       "https://product.hstatic.net/1000246396/product/reuzel-fiber-pomade_945067b3694e41e992dde2e50eb2df82_master.jpg", 
       "https://saptoc.vn/images/pomade-goc-nuoc/reuzel-fiber-2.jpg", 
       "https://tuongbarber.com/wp-content/uploads/Reuzel-Fiber-Pomade-4.jpg"],
-    category: "san-pham",
+    category: "tao-kieu-toc",
     description:
-      "By Vilain Gold Digger là dòng sáp cao cấp của Đan Mạch với khả năng giữ nếp cực tốt, giúp tạo kiểu sắc nét và linh hoạt.",
-    features: ["Giữ nếp cực mạnh", "Không bóng", "Dễ dàng tạo texture", "Phù hợp mọi loại tóc"],
+      "By Vilain Gold Digger là dòng sáp cao cấp của Đan Mạch chuyên dùng để tạo kiểu tóc với khả năng giữ nếp cực tốt, giúp tạo kiểu sắc nét và linh hoạt.",
+    features: ["Tạo kiểu mạnh mẽ", "Không bóng", "Dễ tạo texture", "Phù hợp mọi kiểu tóc"],
     specifications: {
       weight: "65g",
       origin: "Đan Mạch",
@@ -101,9 +101,9 @@ const products:any = {
       expiry: "36 tháng kể từ ngày sản xuất",
     },
     usage: [
-      "Lấy một lượng nhỏ và làm nóng trong lòng bàn tay",
-      "Vuốt đều lên tóc khô hoặc hơi ẩm",
-      "Tạo kiểu bằng tay hoặc lược",
+      "Lấy lượng nhỏ và làm nóng trong lòng bàn tay",
+      "Tạo kiểu trên tóc khô hoặc hơi ẩm",
+      "Định hình kiểu tóc bằng tay hoặc lược",
       "Dùng thêm gôm xịt để giữ kiểu lâu hơn",
     ],
     inStock: true,
@@ -114,7 +114,7 @@ const products:any = {
   },
   ["4"]: {
     id: 4,
-    name: "Sáp vuốt tóc Loreal chính hãng",
+    name: "Sáp Tạo Kiểu Tóc Loreal Nam",
     price: "450,000đ",
     originalPrice: "490,000đ",
     image: "https://product.hstatic.net/200000168861/product/1550461800-1075701924-sap-vu-t-toc-nam-loreal_a3dbab94182b43f081f70bd7e172127a.jpg",
@@ -122,22 +122,22 @@ const products:any = {
       "https://product.hstatic.net/200000168861/product/1550461800-1075701924-sap-vu-t-toc-nam-loreal_a3dbab94182b43f081f70bd7e172127a.jpg", 
       "https://vn-test-11.slatic.net/p/536a478e02d52d4e37a7261bddc6433d.jpg",
        "https://vonmart.vn/wp-content/uploads/2017/09/sap-loreal-mem.jpg"],
-    category: "san-pham",
+    category: "tao-kieu-toc",
     description:
-      "By Vilain Gold Digger là dòng sáp cao cấp của Đan Mạch với khả năng giữ nếp cực tốt, giúp tạo kiểu sắc nét và linh hoạt.",
-    features: ["Giữ nếp cực mạnh", "Không bóng", "Dễ dàng tạo texture", "Phù hợp mọi loại tóc"],
+      "Sáp tạo kiểu tóc Loreal chuyên nghiệp với khả năng giữ nếp cực tốt, giúp tạo kiểu sắc nét và linh hoạt cho nam giới.",
+    features: ["Tạo kiểu mạnh mẽ", "Không bóng", "Dễ định hình", "Phù hợp mọi kiểu tóc"],
     specifications: {
       weight: "65g",
-      origin: "Đan Mạch",
+      origin: "Pháp",
       holdLevel: "Cực cao",
       shineLevel: "Không bóng",
       ingredients: "Aqua, Ceteareth-25, PEG-7 Glyceryl Cocoate, etc.",
       expiry: "36 tháng kể từ ngày sản xuất",
     },
     usage: [
-      "Lấy một lượng nhỏ và làm nóng trong lòng bàn tay",
-      "Vuốt đều lên tóc khô hoặc hơi ẩm",
-      "Tạo kiểu bằng tay hoặc lược",
+      "Lấy lượng nhỏ và làm nóng trong lòng bàn tay",
+      "Tạo kiểu trên tóc khô hoặc hơi ẩm",
+      "Định hình kiểu tóc bằng tay hoặc lược",
       "Dùng thêm gôm xịt để giữ kiểu lâu hơn",
     ],
     inStock: true,
@@ -148,7 +148,7 @@ const products:any = {
   },
   ["5"]: {
     id: 5,
-    name: "Gôm xịt tóc Butterfly Shadow 600ml",
+    name: "Gôm Xịt Tạo Kiểu Tóc Butterfly Shadow 600ml",
     price: "89.000đ",
     originalPrice: "120.000đ",
     image: "https://waxforman.com/public/manipulate/800x800/shopping-product-images/1695059811-gom-xit-toc-butterfly-shadow-600ml-01.jpg",
@@ -157,13 +157,13 @@ const products:any = {
       "https://waxforman.com/public/manipulate/800x800/shopping-product-images/1695059813-gom-xit-toc-butterfly-shadow-600ml-02.jpg",
       "https://waxforman.com/public/manipulate/800x800/shopping-product-images/1695059813-gom-xit-toc-butterfly-shadow-600ml-03.jpg"
     ],
-    category: "san-pham",
-    description: "Gôm xịt tóc Butterfly Shadow 600ml cho hiệu năng giữ nếp cực mạnh, không bóng, dễ tạo kiểu, phù hợp với mọi loại tóc.",
+    category: "tao-kieu-toc",
+    description: "Gôm xịt tạo kiểu tóc Butterfly Shadow 600ml cho hiệu năng giữ nếp cực mạnh, không bóng, dễ tạo kiểu, phù hợp với mọi kiểu tóc.",
     features: [
-      "Giữ nếp cực mạnh",
+      "Tạo kiểu nhanh chóng",
       "Không bóng",
-      "Dễ dàng tạo texture",
-      "Phù hợp mọi loại tóc"
+      "Dễ định hình",
+      "Phù hợp mọi kiểu tóc"
     ],
     specifications: {
       weight: "600ml",
@@ -173,7 +173,7 @@ const products:any = {
     usage: [
       "Lắc đều trước khi sử dụng",
       "Xịt lên tóc từ khoảng cách 20-30cm",
-      "Dùng tay hoặc lược để tạo kiểu theo ý muốn"
+      "Tạo kiểu theo ý muốn bằng tay hoặc lược"
     ],
     inStock: true,
     rating: 4.7,
@@ -182,7 +182,7 @@ const products:any = {
   },
   ["6"]: {
     id: 6,
-    name: "Tinh Dầu Dưỡng Tóc Hư Tổn Aurane Softliss Fantastic Repair Hair Oil 125ml",
+    name: "Tinh Dầu Tạo Kiểu và Dưỡng Tóc Aurane Softliss 125ml",
     price: "120.000đ",
     originalPrice: "150.000đ",
     image: "https://down-vn.img.susercontent.com/file/6a5ac1d3efc5434f30f304c28b737818",
@@ -192,32 +192,32 @@ const products:any = {
       "https://product.hstatic.net/200000875945/product/16250f12b66277a95cdea88b77ced8f1_19666797c84945e5b87ade289d1b8179_master.jpg",
       "https://sg-live-01.slatic.net/p/964cc9ab70767958b050a1be96136110.jpg_525x525q80.jpg"
     ],
-    category: "san-pham",
-    description: "Tinh dầu dưỡng tóc giúp phục hồi tóc hư tổn, cung cấp độ ẩm và bảo vệ tóc khỏi tác động của nhiệt.",
+    category: "tao-kieu-toc",
+    description: "Tinh dầu tạo kiểu và dưỡng tóc giúp định hình kiểu tóc tự nhiên, phục hồi tóc hư tổn, cung cấp độ ẩm và bảo vệ tóc khỏi tác động của nhiệt.",
     features: [
+      "Tạo kiểu tự nhiên",
       "Dưỡng ẩm chuyên sâu",
-      "Phục hồi tóc hư tổn",
-      "Bảo vệ khỏi nhiệt và môi trường",
-      "Không gây bết tóc"
+      "Bảo vệ khỏi nhiệt",
+      "Không bết tóc"
     ],
     specifications: {
       weight: "125ml",
       origin: "Pháp",
-      usageType: "Dưỡng tóc hằng ngày",
+      usageType: "Tạo kiểu và dưỡng tóc hằng ngày",
       ingredients: "Dầu Argan, Vitamin E, Keratin, Protein thực vật",
       expiry: "36 tháng kể từ ngày sản xuất"
     },
     usage: [
-      "Lấy một lượng nhỏ ra tay",
-      "Xoa đều lên tóc ẩm hoặc khô",
-      "Dùng lược hoặc tay để phân bố đều",
-      "Không cần xả lại với nước"
-    ],
-    inStock: true,
-    rating: 4.8,
-    reviews: 150,
-    isBestSeller: true
-  }
+        "Lấy một lượng nhỏ ra tay",
+        "Tạo kiểu trên tóc ẩm hoặc khô",
+        "Dùng lược hoặc tay để định hình",
+        "Không cần xả lại với nước"
+      ],
+      inStock: true,
+      rating: 4.8,
+      reviews: 150,
+      isBestSeller: true
+    }
 }
 
 interface ProductDetailsProps {
@@ -228,7 +228,7 @@ interface ProductDetailsProps {
 export default function ProductDetails({ category, slug }: ProductDetailsProps) {
   const [selectedImage, setSelectedImage] = useState(0)
   const [quantity, setQuantity] = useState(1)
-  const product = products[String (slug)]
+  const product = products[String(slug)]
 
   if (!product) {
     return <div>Sản phẩm không tồn tại</div>
@@ -392,4 +392,3 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
     </div>
   )
 }
-
