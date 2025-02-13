@@ -14,7 +14,7 @@ export default function ProductsPage() {
           ]}
         />
 
-        <h1 className="text-3xl font-bold mt-8 mb-8 ">KIỂU TÓC</h1>
+        <h1 className="text-3xl font-bold mt-8 mb-8 ">KIỂU TÓC</h1>           
 
         <div>
           <div className="lg:col-span-3">
