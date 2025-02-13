@@ -228,7 +228,7 @@ interface ProductDetailsProps {
 export default function ProductDetails({ category, slug }: ProductDetailsProps) {
   const [selectedImage, setSelectedImage] = useState(0)
   const [quantity, setQuantity] = useState(1)
-  const product = products[Number (slug)]
+  const product = products[String(slug)]
 
   if (!product) {
     return <div>Sản phẩm không tồn tại</div>
