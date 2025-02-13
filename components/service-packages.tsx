@@ -130,22 +130,22 @@ const services = [
 
 const packages = [
   {
-    image: "http://thang1989.name.vn/web201933/wp-content/uploads/2020/07/banenr-dv1.jpg",
+    image: "/banenr-dv1.jpg",
   },
   {
-    image: "http://thang1989.name.vn/web201933/wp-content/uploads/2020/07/banenr-dv2.jpg",
+    image: "/banenr-dv2.jpg",
   },
   {
-    image: "http://thang1989.name.vn/web201933/wp-content/uploads/2020/07/banenr-dv3.jpg",
+    image: "/banenr-dv3.jpg",
   },
   {
-    image: "http://thang1989.name.vn/web201933/wp-content/uploads/2020/07/banenr-dv4.jpg",
+    image: "/banenr-dv4.jpg",
   },
   {
-    image: "http://thang1989.name.vn/web201933/wp-content/uploads/2020/07/banenr-dv5.jpg",
+    image: "/banenr-dv5.jpg",
   },
    {
-    image: "http://thang1989.name.vn/web201933/wp-content/uploads/2020/07/banenr-dv6.jpg",
+    image: "/banenr-dv6.jpg",
   },
 ]
 

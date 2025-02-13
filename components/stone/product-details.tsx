@@ -339,15 +339,15 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
       </div>
 
       {/* Product Details Tabs */}
-      <Tabs defaultValue="description" className="mt-8">
-        <TabsList className="w-full justify-start border-b h-auto">
-          <TabsTrigger value="description" className="px-8">
+     <Tabs defaultValue="description" className="mt-8">
+        <TabsList className="w-full justify-start border-b h-auto overflow-x-auto flex">
+          <TabsTrigger value="description" className="px-4 text-sm sm:px-8">
             Mô tả
           </TabsTrigger>
-          <TabsTrigger value="specifications" className="px-8">
+          <TabsTrigger value="specifications" className="px-4 text-sm sm:px-8">
             Thông số kỹ thuật
           </TabsTrigger>
-          <TabsTrigger value="usage" className="px-8">
+          <TabsTrigger value="usage" className="px-4 text-sm sm:px-8">
             Hướng dẫn sử dụng
           </TabsTrigger>
         </TabsList>
@@ -357,7 +357,7 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
             <div>
               <h3 className="font-medium mb-2">Tính năng nổi bật:</h3>
               <ul className="list-disc list-inside space-y-1">
-                {product.features.map((feature:any, index:any) => (
+                {product.features.map((feature: any, index: any) => (
                   <li key={index} className="text-gray-700">
                     {feature}
                   </li>
@@ -368,10 +368,13 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
         </TabsContent>
         <TabsContent value="specifications" className="mt-4">
           <div className="space-y-4">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {Object.entries(product.specifications).map(([key, value]) => (
                 <div key={key} className="border-b pb-2">
-                  <span className="font-medium capitalize">{key.replace(/([A-Z])/g, " $1").trim()}:</span> {value as any}
+                  <span className="font-medium capitalize">
+                    {key.replace(/([A-Z])/g, " $1").trim()}:
+                  </span>{" "}
+                  {value as any}
                 </div>
               ))}
             </div>
@@ -381,7 +384,7 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
           <div className="space-y-4">
             <h3 className="font-medium mb-2">Các bước sử dụng:</h3>
             <ol className="list-decimal list-inside space-y-2">
-              {product.usage.map((step:any, index:any) => (
+              {product.usage.map((step: any, index: any) => (
                 <li key={index} className="text-gray-700">
                   {step}
                 </li>
@@ -390,6 +393,7 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
           </div>
         </TabsContent>
       </Tabs>
+
     </div>
   )
 }
