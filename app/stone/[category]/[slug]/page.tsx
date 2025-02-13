@@ -11,7 +11,7 @@ interface ProductPageProps {
 
 const categoryNames: { [key: string]: string } = {
   "san-pham": "Sản Phẩm",
-  "tao-kieu-toc": "Tạo kiểu tóc",
+  "kieu-toc": "Kiểu tóc",
   "cham-soc-toc": "Chăm sóc tóc",
   "cham-soc-da": "Chăm sóc da",
   "cham-soc-co-the": "Chăm sóc cơ thể",

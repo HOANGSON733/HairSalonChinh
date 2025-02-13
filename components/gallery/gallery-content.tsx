@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react";
-import Image from "next/image";
+import { Image } from 'antd';
 import { Tabs, Modal } from "antd";
 import { type GalleryItem, type GalleryCategory, GALLERY_CATEGORIES } from "@/types/gallery";
 
@@ -178,14 +178,6 @@ export default function GalleryContent() {
         ))}
       </div>
 
-      <Modal visible={!!selectedImage} onCancel={() => setSelectedImage(null)} footer={null} centered width={800} >
-        {selectedImage && (
-          <div className="space-y-2 text-center p-1">
-            <Image src={selectedImage.src || "/placeholder.svg"} alt={selectedImage.title} width={800} height={800} />
-            <h3 className="text-lg font-medium">{selectedImage.title}</h3>
-          </div>
-        )}
-      </Modal>
     </div>
   );
 }

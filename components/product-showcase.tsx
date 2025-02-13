@@ -4,7 +4,7 @@ import Image from "next/image";
 import { Card, CardContent } from "@/components/ui/card";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { useRef } from "react";
-
+import Link from "next/link";
 export default function ProductShowcase() {
   const sliderRef = useRef<HTMLDivElement>(null);
 
@@ -65,12 +65,13 @@ export default function ProductShowcase() {
           <h2 className="text-3xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-yellow-400">
             HAIR SALON CHÍNH STORE - SỐ 1 VỀ MỸ PHẨM NAM
           </h2>
-          <a
-            href="#"
+          <Link
+            href="#" 
             className="text-orange-500 hover:underline font-medium transition-colors duration-300"
           >
             XEM TẤT CẢ →
-          </a>
+          </Link>
+          
         </div>
         <div className="relative">
           <button

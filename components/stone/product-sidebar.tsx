@@ -3,7 +3,7 @@ import Link from "next/link"
 
 const categories = [
   { name: "Tất cả sản phẩm", href: "/stone/san-pham" },
-  { name: "Tạo kiểu tóc", href: "/stone/tao-kieu-toc" },
+  { name: "Kiểu tóc", href: "/stone/kieu-toc" },
   { name: "Chăm sóc tóc", href: "/stone/cham-soc-toc" },
   { name: "Chăm sóc da", href: "/stone/cham-soc-da" },
   { name: "Chăm sóc cơ thể", href: "/stone/cham-soc-co-the" },
