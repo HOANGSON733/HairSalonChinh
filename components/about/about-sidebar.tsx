@@ -74,7 +74,7 @@ export default function AboutSidebar() {
         <h2 className="text-lg font-bold bg-black text-white p-2 mb-4">SẢN PHẨM NỔI BẬT</h2>
         <div className="space-y-4">
           {newProducts.map((product, index) => (
-            <Link href={`/stone/tao-kieu-toc/${index + 1}`} key={index} className="flex gap-4 group">
+            <Link href={`/stone/san-pham/${index + 1}`} key={index} className="flex gap-4 group">
               <div className="relative w-16 h-16 flex-shrink-0">
                 <Image src={product.image || "/placeholder.svg"} alt={product.name} fill className="object-cover" />
               </div>
