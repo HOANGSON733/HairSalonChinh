@@ -150,7 +150,6 @@ export default function ProductGrid({ category }: ProductGridProps) {
                 <Image
                   src={product.image || "/placeholder.svg"}
                   alt={product.name}
-                  fill={true}
                   className="object-contain transition-transform "
                   onClick={() => handleImageClick(product.image)} // Mở Modal khi nhấn vào hình ảnh
                 />

@@ -171,7 +171,7 @@ export default function GalleryContent() {
         {filteredItems.map((item) => (
           <div key={item.id} className="cursor-pointer" onClick={() => setSelectedImage({ src: item.image, title: item.title })}>
             <div className="relative aspect-square overflow-hidden rounded-lg">
-              <Image src={item.image || "/placeholder.svg"} alt={item.title} fill className="object-cover" />
+              <Image src={item.image || "/placeholder.svg"} alt={item.title} className="object-cover" />
             </div>
             <h3 className="mt-2 text-sm font-medium text-center">{item.title}</h3>
           </div>
