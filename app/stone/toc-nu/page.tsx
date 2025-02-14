@@ -12,7 +12,7 @@ export default function ProductsPage() {
           items={[
             { label: "Trang chủ", href: "/" },
             { label: "Stone", href: "/stone" },
-            { label: "Kiểu tóc", href: "/stone/toc-nu" },
+            { label: "Kiểu nữ", href: "/stone/toc-nu" },
           ]}
         />
 

@@ -23,7 +23,7 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: "Hair Salon Chinh",
+  title: "Hair Salon Chính",
   description: "Professional Hair & Skin Care Services",
 };
 
