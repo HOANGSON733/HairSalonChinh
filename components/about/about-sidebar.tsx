@@ -35,7 +35,7 @@ const newProducts = [
 
 const news = [
   {
-    title: "Bí mật đằng sau những cánh cửa luôn chật ních người của Salon tóc nam Min Shair Skin",
+    title: "Bí mật đằng sau những cánh cửa luôn chật ních người của Salon tóc nam Hair Salon Chính",
     image:
       "https://scontent.fsgn2-7.fna.fbcdn.net/v/t39.30808-6/474462980_2621698464681615_7587878908924905374_n.jpg?stp=dst-jpg_s600x600_tt6&_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeF397mAt_4sxB9EAPFKFt5NYLSPNy6ko39gtI83LqSjf5kQzpSFJFNIg7FEy-pnqT6jAcmmqIfrU8FacrT7cY4t&_nc_ohc=E7tAlRmvjv8Q7kNvgG6Fyw-&_nc_oc=AdgYpmsbKWIP2o0AmdKOynkUnnUa5Ti3VXl4RGZyaYB7IyRQQcUEnv5x_kvNMD-hb7k&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=AqhWq-qSuf9A4tJwK9ohJ9K&oh=00_AYCkq5Eoim67bV8e9VSJ7RMuVCLzauTZTBWgQUcfXYuefA&oe=67AF1A2A",
     slug: "bi-mat-dang-sau-nhung-canh-cua",
@@ -48,7 +48,7 @@ const news = [
   },
   {
     title:
-      'Không nằm ngoài cơn sốt "Tóc uốn con sâu," Đình Trọng cùng Duy Mạnh đến Min Shair Skin để bắt Trend cho bằng được',
+      'Không nằm ngoài cơn sốt "Tóc uốn con sâu," Đình Trọng cùng Duy Mạnh đến Hair Salon Chính để bắt Trend cho bằng được',
     image:
       "https://scontent.fsgn2-7.fna.fbcdn.net/v/t1.6435-9/172217883_268459884801492_8193938572206678154_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=833d8c&_nc_eui2=AeEXhHRxV-wi08yvO7G87FozTM_4hc5ynWBMz_iFznKdYI5orRv6Y7ZjiukSTvQ-fuxjG0yszB6dipTzpLWghEYA&_nc_ohc=UQMM6woPL9gQ7kNvgG5OG4Z&_nc_oc=AdhTi5NzpvLT3qrPpLJkYMihHYPaQbKrQBRikhiR12ojVBeHg-42jlkzpBQgxsVQxEo&_nc_zt=23&_nc_ht=scontent.fsgn2-7.fna&_nc_gid=A4ANbHulMQJWai-euUfIhSC&oh=00_AYBWYMeFV6UIUGfWJJR9unYwt5ZMUUZqqWqlbHYuNF446w&oe=67D0E8CC",
     slug: "toc-uon-con-sau",

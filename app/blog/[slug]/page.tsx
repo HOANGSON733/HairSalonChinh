@@ -11,34 +11,34 @@ interface BlogPostPageProps {
 // In a real app, this would be fetched from a database
 const blogPosts:any = {
   "bi-mat-dang-sau-nhung-canh-cua": {
-    title: "Bí mật đằng sau những cánh cửa luôn chật ních người của Salon tóc nam Min Shair Skin",
-    content: `Đó có thể là 5 cửa hàng rộng khắp toàn quốc song 5 khi người ta không biết giải cánh hàng loạt xe máy, ô tô đậu đầy dài trước các cửa tiệm salon cắt tóc nam Min Shair Skin. Chưa kể mới đây là tất đến nhờ cắt tóc xịn kiểu tăng đột biến, trung bình một cửa hàng phải nhận tiếp đô hàng nghìn lượt khách mỗi ngày, ai cũng háo hức để có được kiểu tóc đẹp trai siêu hot chỉ 100K. Đâu là bí mật sau thực sự hút khủng tưởng đó?`,
+    title: "Bí mật đằng sau những cánh cửa luôn chật ních người của Salon tóc nam Hair Salon Chinh",
+    content: `Đó có thể là 5 cửa hàng rộng khắp toàn quốc song 5 khi người ta không biết giải cánh hàng loạt xe máy, ô tô đậu đầy dài trước các cửa tiệm salon cắt tóc nam Hair Salon Chinh. Chưa kể mới đây là tất đến nhờ cắt tóc xịn kiểu tăng đột biến, trung bình một cửa hàng phải nhận tiếp đô hàng nghìn lượt khách mỗi ngày, ai cũng háo hức để có được kiểu tóc đẹp trai siêu hot chỉ 100K. Đâu là bí mật sau thực sự hút khủng tưởng đó?`,
     sections: [
       {
         title: "Trải nghiệm thư giãn cực mê",
         content:
-          "Thay vì chỉ gọi đầu, cắt tóc là xong như các tiệm tóc nam thông thường, tại Min Shair Skin anh em sẽ được tận hưởng quy trình chăm sóc đa công nghệ cao như rửa spa. Đội ngũ Skinner khéo léo, massage khắp khuôn mặt, trên huyệt thư giãn mang đến cho bạn cảm giác thư thái, trút hết mọi mệt mỏi để bước ra khỏi salon với phong thái tự tin hơn bao giờ hết.",
+          "Thay vì chỉ gọi đầu, cắt tóc là xong như các tiệm tóc nam thông thường, tại Hair Salon Chinh anh em sẽ được tận hưởng quy trình chăm sóc đa công nghệ cao như rửa spa. Đội ngũ Skinner khéo léo, massage khắp khuôn mặt, trên huyệt thư giãn mang đến cho bạn cảm giác thư thái, trút hết mọi mệt mỏi để bước ra khỏi salon với phong thái tự tin hơn bao giờ hết.",
       },
       {
         title: "Mức giá hời cho một combo chăm sóc toàn diện",
         content:
-          "Một trong những điểm điểm làm nên tên tuổi Min Shair Skin khiến khách hàng thay đổi thói quen cắt tóc ở tiệm đầu ngõ chính là gói dịch vụ Shine combo 100K. Khái niệm combo 7 bước đã qua quên thuộc với những vị khách ruột của Min Shair Skin, trải nghiệm tất cả các bước: Rửa mặt – Chăm sóc da mặt công nghệ cao – Gội đầu massage – Tư vấn kiểu tóc phù hợp theo khuôn mặt – Cắt tạo kiểu bởi những Stylist hàng đầu – Cao mặt ém đi, gọt xả kỹ càng – Vuốt sáp tạo kiểu. Trọn gói cực kính tế chỉ 100K không làm đau ví tiền mà và mới mẻ tóc đẹp, sau đó bạn sẽ đẹp trai hoàn hảo!",
+          "Một trong những điểm điểm làm nên tên tuổi Hair Salon Chinh khiến khách hàng thay đổi thói quen cắt tóc ở tiệm đầu ngõ chính là gói dịch vụ Shine combo 100K. Khái niệm combo 7 bước đã qua quên thuộc với những vị khách ruột của Hair Salon Chinh, trải nghiệm tất cả các bước: Rửa mặt – Chăm sóc da mặt công nghệ cao – Gội đầu massage – Tư vấn kiểu tóc phù hợp theo khuôn mặt – Cắt tạo kiểu bởi những Stylist hàng đầu – Cao mặt ém đi, gọt xả kỹ càng – Vuốt sáp tạo kiểu. Trọn gói cực kính tế chỉ 100K không làm đau ví tiền mà và mới mẻ tóc đẹp, sau đó bạn sẽ đẹp trai hoàn hảo!",
       },
       {
         title: "Đội ngũ stylist chuyên nghiệp – Hiểu bạn hơn cả chính bạn",
         content:
-          "Mỗi stylist ở Min Shair Skin là sở hữu những cá tính, thế mạnh về một kiểu tóc khác nhau, nhưng đều chung sự tận tâm, khéo léo, mong muốn đem đến cho phái mạnh những kiểu tóc đẹp trai, dẫn đầu xu hướng để tự tin bứt phá trong sự nghiệp. Chỉ cần bạn đưa ra yêu cầu, stylist sẽ tư vấn kiểu tóc phù hợp dựa trên khuôn mặt, tính trạng sức khỏe của tóc cũng như phong cách mà bạn hướng tới.",
+          "Mỗi stylist ở Hair Salon Chinh là sở hữu những cá tính, thế mạnh về một kiểu tóc khác nhau, nhưng đều chung sự tận tâm, khéo léo, mong muốn đem đến cho phái mạnh những kiểu tóc đẹp trai, dẫn đầu xu hướng để tự tin bứt phá trong sự nghiệp. Chỉ cần bạn đưa ra yêu cầu, stylist sẽ tư vấn kiểu tóc phù hợp dựa trên khuôn mặt, tính trạng sức khỏe của tóc cũng như phong cách mà bạn hướng tới.",
       },
       {
         title: "Dịch vụ chăm sóc nhiệt tình – Đặt lịch qua app tiện lợi",
         content:
-          "Tại Min Shair Skin, khách hàng được đội ngũ nhân viên trẻ trung thực quan tâm đến từng chi tiết nhỏ như đầu xe, sạc xe điện, wifi, nước uống miễn phí lạnh mát,... Đây là quy chuẩn về con người mà Min Shair Skin luôn hướng tới để nâng tầm trải nghiệm của anh em. Đặc biệt đủ luôn trong tình trạng chật rích nhưng mọi khách hàng đều không cần chờ đợi lâu cắt tóc vì đã được đặt lịch từ trước thông qua ứng dụng cài đặt sẵn trên điện thoại. Quả là điểm cộng to lớn cho những khách hàng bận rộn.",
+          "Tại Hair Salon Chinh, khách hàng được đội ngũ nhân viên trẻ trung thực quan tâm đến từng chi tiết nhỏ như đầu xe, sạc xe điện, wifi, nước uống miễn phí lạnh mát,... Đây là quy chuẩn về con người mà Hair Salon Chinh luôn hướng tới để nâng tầm trải nghiệm của anh em. Đặc biệt đủ luôn trong tình trạng chật rích nhưng mọi khách hàng đều không cần chờ đợi lâu cắt tóc vì đã được đặt lịch từ trước thông qua ứng dụng cài đặt sẵn trên điện thoại. Quả là điểm cộng to lớn cho những khách hàng bận rộn.",
       },
     ],
   },
   "3-kieu-toc-nam-hot-trend": {
     title: "Là đàn ông, đừng bỏ lỡ 3 kiểu tóc nam Hot Trend nhất 2024 này",
-    content: `Không cứ đàn ông xấu, chỉ có đàn ông chưa lựa chọn đúng kiểu tóc mà thôi. Chọn được kiểu tóc phù hợp với khuôn mặt và phong cách của mình là điều vô cùng quan trọng. Hãy cùng Min Shair Skin điểm qua 3 kiểu tóc nam đang là hot trend 2024 nhé!`,
+    content: `Không cứ đàn ông xấu, chỉ có đàn ông chưa lựa chọn đúng kiểu tóc mà thôi. Chọn được kiểu tóc phù hợp với khuôn mặt và phong cách của mình là điều vô cùng quan trọng. Hãy cùng Hair Salon Chinh điểm qua 3 kiểu tóc nam đang là hot trend 2024 nhé!`,
     sections: [
       {
         title: "Kiểu tóc Layer - Phong cách trẻ trung năng động",
@@ -66,14 +66,14 @@ Two-Block mang đến vẻ ngoài trẻ trung, năng động nhưng vẫn giữ 
 - Phong cách cá nhân
 - Thời gian và công sức bạn có thể dành cho việc tạo kiểu hàng ngày
 
-Đừng ngần ngại tham khảo ý kiến của các stylist chuyên nghiệp tại Min Shair Skin để được tư vấn kiểu tóc phù hợp nhất với bạn.`,
+Đừng ngần ngại tham khảo ý kiến của các stylist chuyên nghiệp tại Hair Salon Chinh để được tư vấn kiểu tóc phù hợp nhất với bạn.`,
       },
     ],
   },
   "toc-uon-con-sau": {
     title:
-      'Không nằm ngoài cơn sốt "Tóc uốn con sâu," Đình Trọng cùng Duy Mạnh đến Min Shair Skin để bắt Trend cho bằng được',
-    content: `Kiểu tóc uốn con sâu đang là một trong những xu hướng tóc nam hot nhất hiện nay. Không chỉ giới trẻ mà ngay cả các cầu thủ nổi tiếng như Đình Trọng và Duy Mạnh cũng không thể bỏ qua trend này. Hãy cùng Min Shair Skin tìm hiểu về kiểu tóc đang gây sốt này nhé!`,
+      'Không nằm ngoài cơn sốt "Tóc uốn con sâu," Đình Trọng cùng Duy Mạnh đến Hair Salon Chinh để bắt Trend cho bằng được',
+    content: `Kiểu tóc uốn con sâu đang là một trong những xu hướng tóc nam hot nhất hiện nay. Không chỉ giới trẻ mà ngay cả các cầu thủ nổi tiếng như Đình Trọng và Duy Mạnh cũng không thể bỏ qua trend này. Hãy cùng Hair Salon Chinh tìm hiểu về kiểu tóc đang gây sốt này nhé!`,
     sections: [
       {
         title: "Tóc uốn con sâu là gì?",
@@ -82,8 +82,8 @@ Two-Block mang đến vẻ ngoài trẻ trung, năng động nhưng vẫn giữ 
 Điểm đặc biệt của kiểu tóc này là những lọn tóc được uốn không đều nhau, tạo cảm giác tự nhiên và phá cách. Đây là lý do vì sao kiểu tóc này được nhiều người yêu thích, đặc biệt là giới trẻ và những người của công chúng.`,
       },
       {
-        title: "Quy trình uốn tóc con sâu tại Min Shair Skin",
-        content: `Để có được kiểu tóc uốn con sâu đẹp, các stylist tại Min Shair Skin sẽ thực hiện qua các bước sau:
+        title: "Quy trình uốn tóc con sâu tại Hair Salon Chinh",
+        content: `Để có được kiểu tóc uốn con sâu đẹp, các stylist tại Hair Salon Chinh sẽ thực hiện qua các bước sau:
 
 1. Tư vấn và phân tích tóc
 2. Gội đầu và dưỡng tóc
@@ -104,11 +104,11 @@ Toàn bộ quy trình được thực hiện bởi các stylist có nhiều năm
 - Không chải tóc khi tóc ướt
 - Định kỳ cắt tỉa và dưỡng tóc tại salon
 
-Min Shair Skin có các sản phẩm chăm sóc tóc chuyên dụng, giúp bạn duy trì kiểu tóc đẹp lâu dài.`,
+Hair Salon Chinh có các sản phẩm chăm sóc tóc chuyên dụng, giúp bạn duy trì kiểu tóc đẹp lâu dài.`,
       },
       {
         title: "Lời khuyên từ chuyên gia",
-        content: `Các stylist tại Min Shair Skin khuyên rằng:
+        content: `Các stylist tại Hair Salon Chinh khuyên rằng:
 
 - Nên thực hiện uốn tóc tại các salon uy tín để đảm bảo chất lượng
 - Chọn độ xoăn phù hợp với khuôn mặt và phong cách
@@ -121,7 +121,7 @@ Min Shair Skin có các sản phẩm chăm sóc tóc chuyên dụng, giúp bạn
   },
   "huong-dan-vuot-toc-layer": {
     title: "Hướng dẫn vuốt tóc layer tại nhà mà vẫn đẹp hoàn hảo",
-    content: `Layer là một trong những kiểu tóc được ưa chuộng nhất hiện nay, đặc biệt phù hợp với những anh em có khuôn mặt dài hoặc trán cao. Tuy nhiên, không phải ai cũng biết cách vuốt tóc layer sao cho đẹp. Hôm nay, Min Shair Skin sẽ hướng dẫn chi tiết cách vuốt tóc layer tại nhà.`,
+    content: `Layer là một trong những kiểu tóc được ưa chuộng nhất hiện nay, đặc biệt phù hợp với những anh em có khuôn mặt dài hoặc trán cao. Tuy nhiên, không phải ai cũng biết cách vuốt tóc layer sao cho đẹp. Hôm nay, Hair Salon Chinh sẽ hướng dẫn chi tiết cách vuốt tóc layer tại nhà.`,
     sections: [
       {
         title: "Chuẩn bị dụng cụ cần thiết",
@@ -134,7 +134,7 @@ Min Shair Skin có các sản phẩm chăm sóc tóc chuyên dụng, giúp bạn
 5. Xịt tạo phồng (nếu cần)
 6. Xịt giữ nếp (tùy chọn)
 
-Việc chọn đúng loại sáp vuốt tóc rất quan trọng. Min Shair Skin khuyên bạn nên sử dụng các sản phẩm chất lượng cao để có được kết quả tốt nhất.`,
+Việc chọn đúng loại sáp vuốt tóc rất quan trọng. Hair Salon Chinh khuyên bạn nên sử dụng các sản phẩm chất lượng cao để có được kết quả tốt nhất.`,
       },
       {
         title: "Các bước vuốt tóc layer cơ bản",
@@ -187,7 +187,7 @@ Tóc layer dài:
   },
   "side-swept-nam": {
     title: "Side Swept Nam: Làm thế nào để duy trì vẻ lãng tử dài lâu?",
-    content: `Side Swept là kiểu tóc nam đang được ưa chuộng bởi vẻ đẹp lãng tử, thanh lịch mà nó mang lại. Tuy nhiên, để duy trì được kiểu tóc này đẹp và bền lâu không phải là điều dễ dàng. Hãy cùng Min Shair Skin tìm hiểu cách chăm sóc và tạo kiểu Side Swept hiệu quả nhé!`,
+    content: `Side Swept là kiểu tóc nam đang được ưa chuộng bởi vẻ đẹp lãng tử, thanh lịch mà nó mang lại. Tuy nhiên, để duy trì được kiểu tóc này đẹp và bền lâu không phải là điều dễ dàng. Hãy cùng Hair Salon Chinh tìm hiểu cách chăm sóc và tạo kiểu Side Swept hiệu quả nhé!`,
     sections: [
       {
         title: "Side Swept là gì?",
@@ -248,7 +248,7 @@ Lưu ý: Chọn sản phẩm tạo kiểu phù hợp với chất tóc và độ
 - Tóc không vào nếp
 - Rẽ ngôi không cân đối
 
-Để khắc phục, hãy đến Min Shair Skin để được tư vấn và hướng dẫn cách tạo kiểu phù hợp với bạn.`,
+Để khắc phục, hãy đến Hair Salon Chinh để được tư vấn và hướng dẫn cách tạo kiểu phù hợp với bạn.`,
       },
     ],
   },
@@ -339,7 +339,7 @@ Lưu ý: Sử dụng lược chải phù hợp và không tạo lực quá mạn
 - Không lạm dụng hóa chất
 - Thay đổi sản phẩm theo mùa
 
-Min Shair Skin luôn sẵn sàng tư vấn và giúp bạn có được kiểu tóc Sidepart hoàn hảo nhất.`,
+Hair Salon Chinh luôn sẵn sàng tư vấn và giúp bạn có được kiểu tóc Sidepart hoàn hảo nhất.`,
       },
     ],
   },
@@ -404,7 +404,7 @@ Min Shair Skin luôn sẵn sàng tư vấn và giúp bạn có được kiểu t
 - Xịt dưỡng tóc
 - Mặt nạ tóc
 
-Min Shair Skin có đầy đủ các sản phẩm chăm sóc tóc chất lượng cao, phù hợp với từng loại tóc.`,
+Hair Salon Chinh có đầy đủ các sản phẩm chăm sóc tóc chất lượng cao, phù hợp với từng loại tóc.`,
       },
       {
         title: "Những lưu ý quan trọng",
@@ -430,7 +430,7 @@ Min Shair Skin có đầy đủ các sản phẩm chăm sóc tóc chất lượn
 - Tạo kiểu khi tóc ướt
 - Dùng nước quá nóng
 
-Đến Min Shair Skin để được tư vấn chi tiết về cách chăm sóc tóc Sport phù hợp với bạn.`,
+Đến Hair Salon Chinh để được tư vấn chi tiết về cách chăm sóc tóc Sport phù hợp với bạn.`,
       },
     ],
   },
@@ -521,7 +521,7 @@ Lưu ý: Chọn sản phẩm tạo kiểu phù hợp với phiên bản Quiff b�
 - Sử dụng serum dưỡng tóc
 - Cắt tỉa thường xuyên
 
-Min Shair Skin sẽ giúp bạn có được kiểu tóc Quiff hoàn hảo và hướng dẫn cách chăm sóc phù hợp.`,
+Hair Salon Chinh sẽ giúp bạn có được kiểu tóc Quiff hoàn hảo và hướng dẫn cách chăm sóc phù hợp.`,
       },
     ],
   },

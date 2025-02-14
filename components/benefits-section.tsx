@@ -17,7 +17,7 @@ export default function BenefitsSection() {
       <div className="container mx-auto">
         <h2 className="text-3xl font-bold text-white mb-4 p-2">TIỆN ÍCH <span className="bg-gradient-to-r from-orange-500 to-yellow-500 text-transparent bg-clip-text">  HAIR SALON CHÍNH</span></h2>
         <p className="text-gray-400 mb-8 p-2">
-          Anh sẽ được tận hưởng những tiện ích chăm sóc khác biệt này tại Min Shair Skin
+          Anh sẽ được tận hưởng những tiện ích chăm sóc khác biệt này tại Hair Salon Chinh
         </p>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
           {benefits.map((benefit, index) => (

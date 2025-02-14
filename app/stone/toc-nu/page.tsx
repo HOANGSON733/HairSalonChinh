@@ -1,5 +1,7 @@
+import React from "react"
 import Breadcrumb from "@/components/breadcrumb"
-import ProductGrid from "@/components/hair-style/style-grid"
+import ProductGrid from "@/components/hair-female/hair-female"
+
 // import ProductSidebar from "@/components/stone/product-sidebar"
 
 export default function ProductsPage() {
@@ -10,11 +12,11 @@ export default function ProductsPage() {
           items={[
             { label: "Trang chủ", href: "/" },
             { label: "Stone", href: "/stone" },
-            { label: "Kiểu tóc nam", href: "/stone/kieu-toc" },
+            { label: "Kiểu tóc", href: "/stone/toc-nu" },
           ]}
         />
 
-        <h1 className="text-3xl font-bold mt-8 mb-8 ">KIỂU TÓC NAM</h1>           
+        <h1 className="text-3xl font-bold mt-8 mb-8 ">TÓC NỮ</h1>
 
         <div>
           <div className="lg:col-span-3">

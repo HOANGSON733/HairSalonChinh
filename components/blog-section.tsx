@@ -4,9 +4,9 @@ export default function BlogSection() {
   const posts = [
     {
       title:
-        "BÍ MẬT ĐẰNG SAU NHỮNG CÁNH CỬA LUÔN CHẬT NÍCH NGƯỜI CỦA SALON TÓC NAM MIN SHAIR SKIN",
+        "BÍ MẬT ĐẰNG SAU NHỮNG CÁNH CỬA LUÔN CHẬT NÍCH NGƯỜI CỦA SALON TÓC NAM HAIR SALON CHÍNH",
       excerpt:
-        "Dù có tới 85 cửa hàng rộng khắp toàn quốc song ít khi người ta không bắt gặp cảnh hàng loạt xe máy, ô tô xếp hàng dài trước các cửa tiệm salon cắt tóc nam Min Shair Skin. Chưa kể mỗi dịp lễ tết đến nhu cầu cắt tóc.",
+        "Dù có tới 85 cửa hàng rộng khắp toàn quốc song ít khi người ta không bắt gặp cảnh hàng loạt xe máy, ô tô xếp hàng dài trước các cửa tiệm salon cắt tóc nam HAIR SALON CHÍNH. Chưa kể mỗi dịp lễ tết đến nhu cầu cắt tóc.",
       image:
         "https://newspaceconcept.vn/wp-content/uploads/2023/03/thiet-ke-salon-toc-son-hair-sai-gon-6.webp",
     },
@@ -19,7 +19,7 @@ export default function BlogSection() {
     },
     {
       title:
-        "KHÔNG NẰM NGOÀI CƠN SỐT 'TÓC UỐN CON SẤU', ĐÌNH TRỌNG CÙNG DUY MẠNH ĐẾN MIN SHAIR SKIN ĐỂ BẮT TREND CHO BẰNG ĐƯỢC",
+        "KHÔNG NẰM NGOÀI CƠN SỐT 'TÓC UỐN CON SẤU', ĐÌNH TRỌNG CÙNG DUY MẠNH ĐẾN HAIR SALON CHÍNH ĐỂ BẮT TREND CHO BẰNG ĐƯỢC",
       excerpt:
         "Cắt tóc nam không chỉ là nhu cầu làm đẹp mà còn thể hiện cá tính của mỗi người. Bởi vậy, các cầu thủ bóng đá không ngừng rèn luyện, liên tục tìm kiếm những kiểu tóc mới thể hiện bản lĩnh thói quen của bản thân.",
       image:
@@ -27,7 +27,7 @@ export default function BlogSection() {
     },
     {
       title:
-        "KHÔNG NẰM NGOÀI CƠN SỐT 'TÓC UỐN CON SẤU', ĐÌNH TRỌNG CÙNG DUY MẠNH ĐẾN MIN SHAIR SKIN ĐỂ BẮT TREND CHO BẰNG ĐƯỢC",
+        "KHÔNG NẰM NGOÀI CƠN SỐT 'TÓC UỐN CON SẤU', ĐÌNH TRỌNG CÙNG DUY MẠNH ĐẾN HAIR SALON CHÍNH ĐỂ BẮT TREND CHO BẰNG ĐƯỢC",
       excerpt:
         "Cắt tóc nam không chỉ là nhu cầu làm đẹp mà còn thể hiện cá tính của mỗi người. Bởi vậy, các cầu thủ bóng đá không ngừng rèn luyện, liên tục tìm kiếm những kiểu tóc mới thể hiện bản lĩnh thói quen của bản thân.",
       image:
@@ -35,7 +35,7 @@ export default function BlogSection() {
     },
     {
       title:
-        "KHÔNG NẰM NGOÀI CƠN SỐT 'TÓC UỐN CON SẤU', ĐÌNH TRỌNG CÙNG DUY MẠNH ĐẾN MIN SHAIR SKIN ĐỂ BẮT TREND CHO BẰNG ĐƯỢC",
+        "KHÔNG NẰM NGOÀI CƠN SỐT 'TÓC UỐN CON SẤU', ĐÌNH TRỌNG CÙNG DUY MẠNH ĐẾN HAIR SALON CHÍNH ĐỂ BẮT TREND CHO BẰNG ĐƯỢC",
       excerpt:
         "Cắt tóc nam không chỉ là nhu cầu làm đẹp mà còn thể hiện cá tính của mỗi người. Bởi vậy, các cầu thủ bóng đá không ngừng rèn luyện, liên tục tìm kiếm những kiểu tóc mới thể hiện bản lĩnh thói quen của bản thân.",
       image:

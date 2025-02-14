@@ -8,7 +8,7 @@ import Image from "next/image"
 const news = [
   {
     id: 1,
-    title: "Bí mật đằng sau những cánh cửa luôn chật ních người của Salon tóc nam Min Shair Skin",
+    title: "Bí mật đằng sau những cánh cửa luôn chật ních người của Salon tóc nam Hair Salon Chính",
     category: "Tin tức",
     publishDate: "2024-02-07",
     status: "published",
