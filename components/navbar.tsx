@@ -4,7 +4,7 @@ import { useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
 import { usePathname } from "next/navigation"
-import { ChevronDown, Menu } from "lucide-react"
+import { ChevronDown, Menu, ChevronRight } from "lucide-react"
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
 import BookingModal from "./booking-modal"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
@@ -32,12 +32,21 @@ const menuItems = [
 
 export default function Navbar() {
   const [isBookingOpen, setIsBookingOpen] = useState(false)
+  const [openMobileDropdowns, setOpenMobileDropdowns] = useState<string[]>([])
   const pathname = usePathname()
 
   const handleMenuClick = (item: (typeof menuItems)[0]) => {
     if (item.isBooking) {
       setIsBookingOpen(true)
     }
+  }
+
+  const toggleMobileDropdown = (itemName: string) => {
+    setOpenMobileDropdowns(prev => 
+      prev.includes(itemName) 
+        ? prev.filter(name => name !== itemName)
+        : [...prev, itemName]
+    )
   }
 
   const isActive = (href: string) => {
@@ -72,23 +81,35 @@ export default function Navbar() {
               <SheetTrigger className="lg:hidden hover:bg-gray-100 p-2 rounded-full transition-colors">
                 <Menu className="h-6 w-6" />
               </SheetTrigger>
-              <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                <div className="flex flex-col gap-4 mt-8">
+              <SheetContent side="right" className="w-[300px] sm:w-[400px] p-0">
+                <div className="flex flex-col mt-8 p-4">
                   {menuItems.map((item) => (
-                    <div key={item.name}>
+                    <div key={item.name} className="border-b border-gray-200 py-3">
                       {item.items ? (
                         <div>
-                          <div className={`text-lg font-medium mb-2 ${
-                            isDropdownActive(item.items) ? "text-[#FF9900]" : "text-gray-700"
+                          <button
+                            onClick={() => toggleMobileDropdown(item.name)}
+                            className={`flex items-center justify-between w-full ${
+                              isDropdownActive(item.items) ? "text-[#FF9900]" : "text-gray-700"
+                            }`}
+                          >
+                            <span className="text-lg font-medium">{item.name}</span>
+                            <ChevronRight 
+                              className={`w-5 h-5 transition-transform ${
+                                openMobileDropdowns.includes(item.name) ? "rotate-90" : ""
+                              }`} 
+                            />
+                          </button>
+                          <div className={`pl-4 mt-2 space-y-2 overflow-hidden transition-all ${
+                            openMobileDropdowns.includes(item.name) 
+                              ? "max-h-96 opacity-100" 
+                              : "max-h-0 opacity-0"
                           }`}>
-                            {item.name}
-                          </div>
-                          <div className="pl-4 flex flex-col gap-2">
                             {item.items.map((subItem) => (
                               <Link
                                 key={subItem.name}
                                 href={subItem.href}
-                                className={`${
+                                className={`block py-2 ${
                                   isActive(subItem.href)
                                     ? "text-[#FF9900] font-medium"
                                     : "text-gray-600 hover:text-[#FF9900]"
@@ -109,7 +130,7 @@ export default function Navbar() {
                       ) : (
                         <Link
                           href={item.href}
-                          className={`text-lg font-medium ${
+                          className={`text-lg font-medium block ${
                             isActive(item.href)
                               ? "text-[#FF9900]"
                               : "text-gray-700 hover:text-[#FF9900]"
@@ -125,7 +146,7 @@ export default function Navbar() {
             </Sheet>
           </div>
 
-          {/* Desktop Menu */}
+          {/* Desktop Menu - Unchanged */}
           <div className="hidden lg:flex space-x-8">
             {menuItems.map((item) => {
               if (item.items) {
@@ -143,13 +164,13 @@ export default function Navbar() {
                     </DropdownMenuTrigger>
                     <DropdownMenuContent
                       className="bg-[#C0C0C0] border-[#808080] mt-3"
-                      style={{ borderRadius: "5px",marginTop:"20px" }}
+                      style={{ borderRadius: "5px", marginTop: "20px" }}
                     >
                       {item.items.map((subItem) => (
                         <DropdownMenuItem 
                           key={subItem.name} 
                           asChild 
-                          className={`border-b hover:bg-[#A8A8A8] transition-colors`}
+                          className="border-b hover:bg-[#A8A8A8] transition-colors"
                         >
                           <Link 
                             href={subItem.href}

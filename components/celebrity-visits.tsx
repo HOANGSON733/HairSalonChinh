@@ -29,9 +29,9 @@ export default function CelebrityVisits() {
 
   return (
     <section className="py-16 bg-gradient-to-b from-zinc-900 to-black text-white text-center">
-      <h4 className="text-3xl font-extrabold mb-12 tracking-wide p-2">
+      <h4 className="text-3xl font-extrabold mb-12 tracking-wide p-2 ">
         DỊCH VỤ CỦA{" "}
-        <span className="bg-gradient-to-r from-orange-500 to-yellow-500 text-transparent bg-clip-text">  HAIR SALON CHÍNH</span> TỎA SÁNG\\
+        <span className="bg-gradient-to-r from-orange-500 to-yellow-500 text-transparent bg-clip-text">  HAIR SALON CHÍNH</span> TỎA SÁNG
       </h4>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 container mx-auto px-4">
         {celebrities.map((celeb, index) => (

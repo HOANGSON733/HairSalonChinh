@@ -4,7 +4,7 @@ import { useState } from "react";
 import { X } from "lucide-react";
 import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { TikTokEmbed } from "./tiktok/page";
-import { TikTokThumbnail } from "./thumb/tiktokthumbnail";
+import { TikTokThumbnail } from "./tiktokthumbnail/tiktokthumbnail";
 
 export default function HotHairstyles() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
@@ -23,20 +23,27 @@ export default function HotHairstyles() {
   };
 
   const hairstyles = [
-    { stylist: "Hair Salon Chính", idtiktok: "7469067520276778258" },
-    { stylist: "Hair Salon Chính", idtiktok: "7092765258560916763" },
-    { stylist: "Hair Salon Chính", idtiktok: "7366887566626262290" },
-    { stylist: "Hair Salon Chính", idtiktok: "7459824141475024135" },
-    { stylist: "Hair Salon Chính", idtiktok: "7444059899396427026" },
-    { stylist: "Hair Salon Chính", idtiktok: "7470091900553317640" },
-    { stylist: "Hair Salon Chính", idtiktok: "7456781608742391047" },
-    { stylist: "Hair Salon Chính", idtiktok: "7427487984116649223" },
+    { id: 1, stylist: "Hair Salon Chính", idtiktok: "7469067520276778258" },
+    { id: 2, stylist: "Hair Salon Chính", idtiktok: "7092765258560916763" },
+    { id: 3, stylist: "Hair Salon Chính", idtiktok: "7366887566626262290" },
+    { id: 4, stylist: "Hair Salon Chính", idtiktok: "7459824141475024135" },
+    { id: 5, stylist: "Hair Salon Chính", idtiktok: "7444059899396427026" },
+    { id: 6, stylist: "Hair Salon Chính", idtiktok: "7470091900553317640" },
+    { id: 7, stylist: "Hair Salon Chính", idtiktok: "7456781608742391047" },
+    { id: 8, stylist: "Hair Salon Chính", idtiktok: "7427487984116649223" },
   ];
 
   return (
     <section className="py-10 bg-gradient-to-b from-zinc-900 to-black">
       <div className="container mx-auto px-4">
+      <h2 className="text-3xl font-bold text-white mb-8 ">
+          BẢNG XẾP HẠN TÓC {" "}
+          <span className="bg-gradient-to-r from-orange-500 to-yellow-500 text-transparent bg-clip-text">
+            HAIR SALON CHÍNH
+          </span>
+        </h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+          
           {hairstyles.map((style, index) => (
             <div
               key={index}
@@ -50,7 +57,7 @@ export default function HotHairstyles() {
                   videoId={style.idtiktok}
                   onDataFetched={(likes, title) => updateLikes(style.idtiktok, likes, title)}
                 />
-                <div className="absolute inset-0 bg-black/50 group-hover:bg-black/80 transition-opacity duration-300 flex flex-col justify-end p-3">
+                <div className="absolute inset-0 group-hover:bg-black/20 transition-opacity duration-300 flex flex-col justify-end p-3">
                   <h3
                     className="text-white font-semibold text-base md:text-lg mb-1 truncate"
                     title={likesData[style.idtiktok]?.title || "Đang tải..."} // Tooltip hiển thị tiêu đề đầy đủ

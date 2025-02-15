@@ -1,21 +1,23 @@
-import Breadcrumb from "@/components/breadcrumb"
-import BlogPostContent from "@/components/blog/blog-post-content"
-import AboutSidebar from "@/components/about/about-sidebar"
+import Breadcrumb from "@/components/breadcrumb";
+import BlogPostContent from "@/components/blog/blog-post-content";
+import AboutSidebar from "@/components/about/about-sidebar";
 
 interface BlogPostPageProps {
   params: {
-    slug: string
-  }
+    slug: string;
+  };
 }
 
 // In a real app, this would be fetched from a database
-const blogPosts:any = {
+const blogPosts: any = {
   "bi-mat-dang-sau-nhung-canh-cua": {
-    title: "Bí mật đằng sau những cánh cửa luôn chật ních người của Salon tóc nam Hair Salon Chinh",
+    title:
+      "Bí mật đằng sau những cánh cửa luôn chật ních người của Salon tóc nam Hair Salon Chính",
     content: `Đó có thể là 5 cửa hàng rộng khắp toàn quốc song 5 khi người ta không biết giải cánh hàng loạt xe máy, ô tô đậu đầy dài trước các cửa tiệm salon cắt tóc nam Hair Salon Chinh. Chưa kể mới đây là tất đến nhờ cắt tóc xịn kiểu tăng đột biến, trung bình một cửa hàng phải nhận tiếp đô hàng nghìn lượt khách mỗi ngày, ai cũng háo hức để có được kiểu tóc đẹp trai siêu hot chỉ 100K. Đâu là bí mật sau thực sự hút khủng tưởng đó?`,
     sections: [
       {
         title: "Trải nghiệm thư giãn cực mê",
+        image: "/test.jpg",
         content:
           "Thay vì chỉ gọi đầu, cắt tóc là xong như các tiệm tóc nam thông thường, tại Hair Salon Chinh anh em sẽ được tận hưởng quy trình chăm sóc đa công nghệ cao như rửa spa. Đội ngũ Skinner khéo léo, massage khắp khuôn mặt, trên huyệt thư giãn mang đến cho bạn cảm giác thư thái, trút hết mọi mệt mỏi để bước ra khỏi salon với phong thái tự tin hơn bao giờ hết.",
       },
@@ -525,13 +527,13 @@ Hair Salon Chinh sẽ giúp bạn có được kiểu tóc Quiff hoàn hảo và
       },
     ],
   },
-}
+};
 
 export default function BlogPostPage({ params }: BlogPostPageProps) {
-  const post = blogPosts[params.slug]
+  const post = blogPosts[params.slug];
 
   if (!post) {
-    return <div className="container mx-auto py-8">Post not found</div>
+    return <div className="container mx-auto py-8">Post not found</div>;
   }
 
   return (
@@ -548,6 +550,7 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8">
           <div className="lg:col-span-3">
             <BlogPostContent post={post} />
+            <img src={post.image} alt="" />
           </div>
           <div className="lg:col-span-1">
             <AboutSidebar />
@@ -555,6 +558,5 @@ export default function BlogPostPage({ params }: BlogPostPageProps) {
         </div>
       </div>
     </main>
-  )
+  );
 }
-

@@ -4,7 +4,7 @@ import "./globals.css";
 import TopBanner from "@/components/top-banner";
 import Navbar from "@/components/navbar";
 import MainFooter from "@/components/main-footer";
-
+import FloatingIcons from "@/components/floatingIcons/FloatingIcons"
 const inter = Inter({
   subsets: ["latin"],
   display: "swap",
@@ -41,7 +41,12 @@ export default function RootLayout({
         <TopBanner />
         <Navbar />
         <main className="flex-grow">{children}</main>
-        <MainFooter />
+        <FloatingIcons
+          facebook ="hairchinhsalon"
+          facebookPage="hairchinhsalon"
+          zaloNumber="0967100552"
+          phoneNumber="0967100552"
+        />
       </body>
     </html>
   );
