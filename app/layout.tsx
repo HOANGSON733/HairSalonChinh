@@ -47,6 +47,7 @@ export default function RootLayout({
           zaloNumber="0967100552"
           phoneNumber="0967100552"
         />
+        <MainFooter/>
       </body>
     </html>
   );
