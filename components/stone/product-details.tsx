@@ -3,10 +3,10 @@
 import { useState } from "react"
 import Image from "next/image"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { Minus, Plus, Star } from "lucide-react"
+// import { Minus, Plus, Star } from "lucide-react"
 
 // This would typically come from an API or database
 const products:any = {
@@ -39,8 +39,6 @@ const products:any = {
       "Tạo kiểu theo ý muốn",
     ],
     inStock: true,
-    rating: 4.8,
-    reviews: 124,
     isNew: false,
     isBestSeller: true,
   },
@@ -73,8 +71,6 @@ const products:any = {
       "Có thể kết hợp với máy sấy để tối ưu hiệu quả",
     ],
     inStock: true,
-    rating: 4.9,
-    reviews: 150,
     isNew: true,
     isBestSeller: false,
   },
@@ -107,8 +103,6 @@ const products:any = {
       "Dùng thêm gôm xịt để giữ kiểu lâu hơn",
     ],
     inStock: true,
-    rating: 4.7,
-    reviews: 200,
     isNew: false,
     isBestSeller: true,
   },
@@ -141,8 +135,6 @@ const products:any = {
       "Dùng thêm gôm xịt để giữ kiểu lâu hơn",
     ],
     inStock: true,
-    rating: 4.7,
-    reviews: 200,
     isNew: false,
     isBestSeller: true,
   },
@@ -176,8 +168,6 @@ const products:any = {
       "Dùng tay hoặc lược để tạo kiểu theo ý muốn"
     ],
     inStock: true,
-    rating: 4.7,
-    reviews: 200,
     isBestSeller: true
   },
   ["6"]: {
@@ -214,8 +204,6 @@ const products:any = {
       "Không cần xả lại với nước"
     ],
     inStock: true,
-    rating: 4.8,
-    reviews: 150,
     isBestSeller: true
   }
 }
@@ -277,19 +265,6 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
           <div>
             <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
             <div className="flex items-center gap-2 mb-4">
-              <div className="flex items-center">
-                {[...Array(5)].map((_, i) => (
-                  <Star
-                    key={i}
-                    className={`w-4 h-4 ${
-                      i < Math.floor(product.rating) ? "fill-yellow-400 text-yellow-400" : "text-gray-300"
-                    }`}
-                  />
-                ))}
-                <span className="ml-2 text-sm text-gray-600">
-                  {product.rating} ({product.reviews} đánh giá)
-                </span>
-              </div>
             </div>
             <div className="flex items-baseline gap-2 mb-4">
               <span className="text-3xl font-bold text-red-600">{product.price}</span>
@@ -300,7 +275,7 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
           </div>
 
           <div className="space-y-4">
-            <div className="flex items-center gap-4">
+            {/* <div className="flex items-center gap-4">
               <div className="flex items-center border rounded-lg">
                 <button
                   onClick={() => setQuantity(Math.max(1, quantity - 1))}
@@ -315,7 +290,7 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
                 </button>
               </div>
               <Button className="flex-1 bg-[#FF9900] hover:bg-[#FF8800]">THÊM VÀO GIỎ HÀNG</Button>
-            </div>
+            </div> */}
 
             <Card className="p-4">
               <h3 className="font-medium mb-2">Thông số sản phẩm:</h3>
