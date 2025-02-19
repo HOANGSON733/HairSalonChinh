@@ -68,7 +68,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between w-full lg:w-auto px-4 lg:px-0">
             <Link href="/" className="block w-14 hover:opacity-90 transition-opacity">
               <Image
-                src="/logo-1.png"
+                src="/Logo-1.png"
                 alt="Hair's Salon Chinh's"
                 width={100}
                 height={80}
