@@ -68,7 +68,7 @@ export default function Navbar() {
           <div className="flex items-center justify-between w-full lg:w-auto px-4 lg:px-0">
             <Link href="/" className="block w-14 hover:opacity-90 transition-opacity">
               <Image
-                src="https://scontent.fsgn2-3.fna.fbcdn.net/v/t39.30808-6/477315575_122146548824433331_1179012108685661300_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=127cfc&_nc_ohc=AuU4TpQQCVgQ7kNvgEx9FLA&_nc_oc=AdhaZ7w4gYiZ76kvapf6j8SzVDI1jkTLyPrHbaCAozA2O6jS7BYxj0kcaW9Fx1u2Pzc&_nc_zt=23&_nc_ht=scontent.fsgn2-3.fna&_nc_gid=AUyMlMRmfy_jo7Dz346H_YN&oh=00_AYCxCVyz4hRWpGxph9q1HyxkyG9R_SLYWlElvDJ_X8OM8g&oe=67B0E8C6"
+                src="/logo-1.png"
                 alt="Hair's Salon Chinh's"
                 width={100}
                 height={80}
