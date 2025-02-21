@@ -3,49 +3,41 @@
 import { useParams } from "next/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import { useEffect, useState } from "react";
+import { GetService } from "@/api/api";
 
-const services = [
-  {
-    id: 1,
-    title: "Cắt & Tạo Kiểu Layer Premium",
-    description: "Trải nghiệm dịch vụ cắt tóc layer đẳng cấp, mang đến phong cách hiện đại và phù hợp với khuôn mặt của bạn.",
-    images: [
-      "https://cellphones.com.vn/sforum/wp-content/uploads/2024/02/cach-cat-toc-layer-tai-nha-3.jpg",
-      "https://beautyx.vn/blog/wp-content/uploads/2022/09/cat-toc-layer-9.jpg",
-      "https://example.com/image3.jpg",
-    ],
-    slug: "cat-tao-kieu-layer-premium",
-  },
-  {
-    id: 2,
-    title: "Nhuộm Màu Nghệ Thuật",
-    description: "Khám phá bộ sưu tập màu nhuộm cao cấp, giúp bạn thể hiện phong cách riêng biệt và nổi bật.",
-    images: [
-      "https://ladystars.vn/wp-content/uploads/2017/11/toc-highlight-cau-vong.jpg",
-      "https://yt.cdnxbvn.com/medias/hervietnam.com.vn/36/36738/co-gai-mac-ao-xam-toc-nhuom-nau-den-highlight-tim.jpg",
-      "https://example.com/image4.jpg",
-    ],
-    slug: "nhuom-mau-nghe-thuat",
-  },
-  {
-    id: 3,
-    title: "Uốn Tóc Bồng Bềnh",
-    description: "Mang đến mái tóc xoăn tự nhiên, bồng bềnh, tạo nét mềm mại và quyến rũ.",
-    images: [
-      "https://example.com/image5.jpg",
-      "https://example.com/image6.jpg",
-    ],
-    slug: "uon-toc-bong-benh",
-  },
-];
+type ServiceType = {
+  id: number;
+  title: string;
+  content: string;
+  images: string[]; // Chỉnh lại để chứa danh sách ảnh
+  description: string;
+  slug: string;
+  excerpt?: string;
+};
 
 export default function DetailService() {
-  const { slug } = useParams(); // Dùng useParams thay cho useRouter
+  const [services, setServices] = useState<ServiceType[]>([]);
+  const { slug } = useParams(); // Lấy slug từ URL
 
+  useEffect(() => {
+    const fetchDataService = async () => {
+      try {
+        const data = await GetService();
+        setServices(data); // 🛠️ Đảm bảo GetService() trả về đúng dữ liệu
+        console.log("Data", data);
+      } catch (error) {
+        console.error("Lỗi khi lấy dữ liệu dịch vụ:", error);
+      }
+    };
+    fetchDataService();
+  }, []);
+
+  // Tìm dịch vụ theo slug
   const service = services.find((item) => item.slug === slug);
 
   if (!service) {
-    return <p className="text-center text-red-500 text-xl">Dịch vụ không tồn tại</p>;
+    return <p className="text-center text-red-500 text-xl mt-10">Dịch vụ không tồn tại</p>;
   }
 
   return (
@@ -53,8 +45,9 @@ export default function DetailService() {
       <h1 className="text-3xl font-bold text-gray-900 mb-4 border-b pb-2">{service.title}</h1>
 
       <div className="flex flex-col gap-4">
-        {service.images.map((image, index) => (
-          <div key={index} className="rounded-lg overflow-hidden border">
+        {service?.images && service.images.length > 0 ? (
+          service.images.map((image, index) => (
+            <div key={index} className="rounded-lg overflow-hidden border">
               <Image
                 src={image}
                 alt={`${service.title} - Image ${index + 1}`}
@@ -62,10 +55,12 @@ export default function DetailService() {
                 height={400}
                 className="object-cover w-full cursor-pointer"
               />
-          </div>
-        ))}
+            </div>
+          ))
+        ) : (
+          <p className="text-center text-gray-500">Chưa có hình ảnh</p>
+        )}
       </div>
-
       <p className="text-gray-700 text-lg mt-4">{service.description}</p>
 
       <Link href="/dich-vu">
