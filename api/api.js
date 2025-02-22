@@ -22,3 +22,14 @@ export const GetService = async () => {
         return []; // Trả về mảng rỗng để tránh lỗi `undefined`
     }
 };
+
+
+export const GetProducts =async ()=>{
+    try {
+        const response =await axios.get(`${API_URL}/products`);
+        return response.data.data;
+    } catch (error) {
+        console.log("Lỗi trong API",error);
+        
+    }
+}

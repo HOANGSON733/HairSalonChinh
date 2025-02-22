@@ -10,7 +10,7 @@ type ServiceType = {
   id: number;
   title: string;
   content: string;
-  images: string[]; // Chỉnh lại để chứa danh sách ảnh
+  image: string[]; // Chỉnh lại để chứa danh sách ảnh
   description: string;
   slug: string;
   excerpt?: string;
@@ -45,15 +45,15 @@ export default function DetailService() {
       <h1 className="text-3xl font-bold text-gray-900 mb-4 border-b pb-2">{service.title}</h1>
 
       <div className="flex flex-col gap-4">
-        {service?.images && service.images.length > 0 ? (
-          service.images.map((image, index) => (
+        {service?.image && service.image.length > 0 ? (
+          service.image.map((image, index) => (
             <div key={index} className="rounded-lg overflow-hidden border">
               <Image
                 src={image}
                 alt={`${service.title} - Image ${index + 1}`}
                 width={600}
                 height={400}
-                className="object-cover w-full cursor-pointer"
+                className="object-cover w-full"
               />
             </div>
           ))
@@ -61,7 +61,8 @@ export default function DetailService() {
           <p className="text-center text-gray-500">Chưa có hình ảnh</p>
         )}
       </div>
-      <p className="text-gray-700 text-lg mt-4">{service.description}</p>
+
+      <p className="text-gray-700 text-lg mt-4 text-justify">{service.description}</p>
 
       <Link href="/dich-vu">
         <button className="mt-6 bg-orange-500 text-white px-5 py-2 rounded-md hover:bg-orange-600 transition">

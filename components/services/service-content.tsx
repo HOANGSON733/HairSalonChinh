@@ -8,23 +8,23 @@ type getService = {
   id: number;
   title: string;
   content: string;
-  image: string; // Single image, not an array
+  image: string[]; // 🛠️ Mảng chứa nhiều ảnh
   description: string;
   slug: string;
   excerpt?: string;
 };
 
 export default function ServiceContent() {
-  const [getServices, setBlogPosts] = useState<getService[]>([]);
+  const [getServices, setGetServices] = useState<getService[]>([]);
 
   useEffect(() => {
     const fetchDataService = async () => {
       try {
         const data = await GetService();
-        setBlogPosts(data); // 🛠️ Ensure GetService() returns correct data
+        setGetServices(data);
         console.log("Data", data);
       } catch (error) {
-        console.error("Lỗi khi lấy dữ liệu blog:", error);
+        console.error("Lỗi khi lấy dữ liệu dịch vụ:", error);
       }
     };
     fetchDataService();
@@ -42,21 +42,23 @@ export default function ServiceContent() {
           >
             <Link href={`/dich-vu/${service.slug}`} className="group">
               <div className="grid grid-cols-2 gap-6 mb-6">
-                {/* Directly use service.image (which is a string) */}
-                <div className="relative aspect-[4/3] overflow-hidden rounded-xl">
-                  <Image
-                    src={service.image || "/placeholder.svg"}  
-                    alt={`${service.title} - Image`}
-                    fill
-                    className="object-cover transform group-hover:scale-105 transition-transform duration-300"
-                  />
-                </div>
+                {/* 🛠️ Hiển thị tối đa 2 ảnh từ mảng */}
+                {service.image.slice(0, 2).map((img, index) => (
+                  <div key={index} className="relative aspect-[4/3] overflow-hidden rounded-xl">
+                    <Image
+                      src={img || "/placeholder.svg"}
+                      alt={`${service.title} - Image ${index + 1}`}
+                      fill
+                      className="object-cover transform group-hover:scale-105 transition-transform duration-300"
+                    />
+                  </div>
+                ))}
               </div>
               <h2 className="text-2xl font-bold mb-4 text-gray-900 group-hover:text-[#FF9900] transition-colors">
                 {service.title}
               </h2>
-              <p className="text-gray-600 leading-relaxed text-lg">
-                {service.description}
+              <p className="text-gray-600 leading-relaxed text-lg text-justify">
+                {service.content}
               </p>
             </Link>
           </article>

@@ -13,10 +13,10 @@ export default function ServicesPage() {
           ]}
         />
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8">
-          <div className="lg:col-span-3">
+          <div className="lg:col-span-3 ">
             <ServiceContent />
           </div>
-          <div className="lg:col-span-1">
+          <div className="lg:col-span-1 p-1">
             <AboutSidebar />
           </div>
         </div>
