@@ -7,7 +7,7 @@ export default function TopBanner() {
       {/* Tiêu đề Salon */}
       <div className="flex items-center px-2 md:px-4 py-2 font-bold text-xl md:text-2xl lg:text-5xl title">
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-black to-orange-500">
-          HAIR SALON CHÍNH
+          HAIR SALON
         </span>
       </div>
 

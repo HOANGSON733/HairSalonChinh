@@ -1,8 +1,9 @@
 "use client"
 
-import { useState, useEffect } from "react"
+import { useState, useEffect, useMemo } from "react"
 import Image from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 import { GetProducts } from "@/api/api"
@@ -12,7 +13,7 @@ type Product = {
   id: number
   name: string
   price: number
-  originalPrice: string
+  originalPrice?: number
   image: string
   category: string
   description: string
@@ -35,39 +36,47 @@ interface ProductGridProps {
 export default function ProductGrid({ category }: ProductGridProps) {
   const [getProducts, setGetProducts] = useState<Product[]>([])
   const [sortBy, setSortBy] = useState("newest")
+  const router = useRouter()
 
   useEffect(() => {
+    let isMounted = true
     const fetchData = async () => {
       try {
         const data = await GetProducts()
-        setGetProducts(data)
-        console.log("Data", data)
+        if (isMounted) setGetProducts(data)
       } catch (error) {
         console.error("Lỗi khi lấy dữ liệu sản phẩm:", error)
       }
     }
     fetchData()
+
+    return () => {
+      isMounted = false
+    }
   }, [])
+
 
   // Lọc sản phẩm theo category
   const filteredProducts = category === "all" ? getProducts : getProducts.filter((product) => product.category === category)
 
   // Sắp xếp sản phẩm
-  const sortedProducts = [...filteredProducts].sort((a, b) => {
-    switch (sortBy) {
-      case "price-asc":
-        return a.price - b.price // So sánh số trực tiếp
-      case "price-desc":
-        return b.price - a.price
-      case "name-asc":
-        return a.name.localeCompare(b.name)
-      case "name-desc":
-        return b.name.localeCompare(a.name)
-      default:
-        return 0
-    }
-  })
-  
+  const sortedProducts = useMemo(() => {
+    return [...filteredProducts].sort((a, b) => {
+      switch (sortBy) {
+        case "price-asc":
+          return a.price - b.price
+        case "price-desc":
+          return b.price - a.price
+        case "name-asc":
+          return a.name.localeCompare(b.name)
+        case "name-desc":
+          return b.name.localeCompare(a.name)
+        default:
+          return 0
+      }
+    })
+  }, [filteredProducts, sortBy])
+
 
   return (
     <div>
@@ -88,16 +97,18 @@ export default function ProductGrid({ category }: ProductGridProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedProducts.map((product) => (
-          <Link href={`/stone/${category}/${product.id}`} key={product.id}>
-            <Card className="group hover:shadow-lg transition-shadow duration-300">
+          <div key={product.id} onClick={() => router.push(`/product/${product.slug}`)}>
+            <Card className="group hover:shadow-lg transition-shadow duration-300 cursor-pointer">
               <CardContent className="p-4">
                 <div className="relative aspect-square mb-4">
                   <Image
                     src={product.image || "/placeholder.svg"}
                     alt={product.name}
-                    fill
-                    className="object-contain group-hover:scale-105 transition-transform duration-300"
+                    width={300} // Điều chỉnh theo kích thước phù hợp
+                    height={300}
+                    className="object-cover group-hover:scale-105 transition-transform duration-300"
                   />
+
                   <div className="absolute top-2 right-2 flex flex-col gap-2">
                     {product.isNew && (
                       <div className="bg-red-500 text-white px-2 py-1 text-xs font-bold rounded">NEW</div>
@@ -115,26 +126,28 @@ export default function ProductGrid({ category }: ProductGridProps) {
                   <div className="flex flex-col items-center gap-1">
                     <span className="font-bold text-red-600 text-lg">{product.price}.000đ</span>
                     {product.originalPrice && (
-                      <span className="text-sm text-gray-500 line-through">{product.originalPrice}.000đ</span>
+                      <span className="text-sm text-gray-500 line-through">{product.originalPrice.toLocaleString()}đ</span>
                     )}
+
                   </div>
                   <div className="flex justify-center gap-2">
-                    {product.specifications && (
-                      <>
-                        <div className="text-sm px-2 py-1 bg-gray-100 rounded">
-                          <span className="font-medium">Độ giữ nếp:</span> {product.specifications.holdLevel}
-                        </div>
-                        <div className="text-sm px-2 py-1 bg-gray-100 rounded">
-                          <span className="font-medium">Độ bóng:</span> {product.specifications.shineLevel}
-                        </div>
-                      </>
+                    {product.specifications?.holdLevel && (
+                      <div className="text-sm px-2 py-1 bg-gray-100 rounded">
+                        <span className="font-medium">Độ giữ nếp:</span> {product.specifications.holdLevel}
+                      </div>
                     )}
+                    {product.specifications?.shineLevel && (
+                      <div className="text-sm px-2 py-1 bg-gray-100 rounded">
+                        <span className="font-medium">Độ bóng:</span> {product.specifications.shineLevel}
+                      </div>
+                    )}
+
                   </div>
 
                 </div>
               </CardContent>
             </Card>
-          </Link>
+          </div>
         ))}
       </div>
     </div>
