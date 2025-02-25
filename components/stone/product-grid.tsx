@@ -126,7 +126,7 @@ export default function ProductGrid({ category }: ProductGridProps) {
                   <div className="flex flex-col items-center gap-1">
                     <span className="font-bold text-red-600 text-lg">{product.price}.000đ</span>
                     {product.originalPrice && (
-                      <span className="text-sm text-gray-500 line-through">{product.originalPrice.toLocaleString()}đ</span>
+                      <span className="text-sm text-gray-500 line-through">{product.originalPrice.toLocaleString()}.000đ</span>
                     )}
 
                   </div>

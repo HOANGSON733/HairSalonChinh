@@ -41,3 +41,31 @@
   scrollbar-width: none; /* Firefox */
 }
 
+/* Thay đổi kích thước thanh scroll */
+::-webkit-scrollbar {
+  width: 10px; /* Chiều rộng thanh cuộn dọc */
+  height: 8px; /* Chiều cao thanh cuộn ngang */
+}
+
+/* Màu sắc gradient cho thanh cuộn */
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(to bottom, #FF8C00, #FF4500); /* Gradient từ màu cam sang đỏ */
+  border-radius: 10px; /* Bo góc cho thanh cuộn */
+}
+
+/* Màu sắc cho khu vực chứa thanh cuộn */
+::-webkit-scrollbar-track {
+  background: linear-gradient(to bottom, 
+  #FFF9C4, #FFEB3B, 
+  #FBC02D, #F57F17, 
+  #FF9800, #FF6F00, 
+  #E65100, #D84315, 
+  #BF360C, #9E2A2F, 
+  #8C1F1A, #000000
+);
+
+
+
+ /* Màu nền cho khu vực chứa thanh cuộn */
+  border-radius: 10px; /* Bo góc cho khu vực chứa thanh cuộn */
+}

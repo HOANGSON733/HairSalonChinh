@@ -13,7 +13,7 @@ import BenefitsSection from "@/components/benefits-section"
 import CommitmentSection from "@/components/commitment-section"
 import StoreLocations from "@/components/store-locations"
 import MainFooter from "@/components/main-footer"
-
+import ScrollEffect from '@/components/ScrollEffect';
 export default function Home() {
   return (
     
@@ -31,6 +31,7 @@ export default function Home() {
       <YoutubeBanner />
       <BenefitsSection />
       <CommitmentSection />
+      <ScrollEffect />
       {/* <StoreLocations /> */}
     </main>
   )
