@@ -97,7 +97,7 @@ export default function ProductGrid({ category }: ProductGridProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedProducts.map((product) => (
-          <div key={product.id} onClick={() => router.push(`/product/${product.slug}`)}>
+          <div key={product.id} onClick={() => router.push(`/stone/${product.slug}`)}>
             <Card className="group hover:shadow-lg transition-shadow duration-300 cursor-pointer">
               <CardContent className="p-4">
                 <div className="relative aspect-square mb-4">

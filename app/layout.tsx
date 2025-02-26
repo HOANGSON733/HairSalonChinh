@@ -45,16 +45,7 @@ export default function RootLayout({
         />
       </head>
       <body className={`${inter.className} min-h-screen flex flex-col`}>
-        <TopBanner />
-        <Navbar />
-        <main className="flex-grow">{children}</main>
-        <FloatingIcons
-          facebook="hairchinhsalon"
-          facebookPage="hairchinhsalon"
-          zaloNumber="0967100552"
-          phoneNumber="0967100552"
-        />
-        <MainFooter />
+      {children}
       </body>
     </html>
   );

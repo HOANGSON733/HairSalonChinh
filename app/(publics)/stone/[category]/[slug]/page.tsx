@@ -29,7 +29,7 @@ export default function ProductPage({ params }: ProductPageProps) {
             { label: "Trang chủ", href: "/" },
             { label: "STONE", href: "/stone" },
             { label: categoryName, href: `/stone/${params.category}` },
-            { label: "Chi tiết sản phẩm", href: "#" },
+            { label: "Chi tiết sản phẩm", href: `#` },
           ]}
         />
 
