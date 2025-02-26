@@ -15,7 +15,7 @@ export default function TopBanner() {
       <div className="flex-shrink-0">
         <Link href={"/"}>
           <Image
-            src="/logo-1.png"
+            src="/Logo-1.png"
             width={80} // Kích thước logo nhỏ hơn trên mobile
             height={80}
             className="md:w-24 md:h-24 lg:w-28 lg:h-28"
