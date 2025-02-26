@@ -3,19 +3,18 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
 
 export default function AdminLogin() {
   const router = useRouter();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
 
   const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
     setLoading(true);
-    setError("");
+    setError(null);
 
     try {
       // Thay thế bằng API xác thực thực tế
@@ -34,41 +33,50 @@ export default function AdminLogin() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-100">
-      <div className="bg-white p-8 shadow-lg rounded-lg w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center mb-6">Đăng Nhập Admin</h2>
-        {error && <p className="text-red-500 text-center">{error}</p>}
-        <form onSubmit={handleLogin} className="space-y-4">
+    <div className="flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-500 to-purple-600">
+      <div className="bg-white p-8 shadow-lg rounded-lg w-full max-w-md transform transition-all duration-500 hover:scale-105">
+        <h2 className="text-3xl font-bold text-center mb-6 text-gray-700">
+          <i className="fas fa-lock text-blue-500 mr-2"></i>
+          Đăng Nhập Admin
+        </h2>
+        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+        <form onSubmit={handleLogin} className="space-y-6">
           <div>
-            <label className="block font-medium">Email</label>
+            <label className="block font-medium text-gray-700">Email</label>
             <input
               type="email"
-              className="w-full border p-2 rounded mt-1 focus:ring-2 focus:ring-blue-400"
+              className="w-full border p-3 rounded-md mt-2 focus:ring-2 focus:ring-blue-500 transition-all duration-300 transform hover:scale-105"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              required
+              aria-label="Email"
+              placeholder="Nhập email của bạn"
             />
           </div>
           <div>
-            <label className="block font-medium">Mật khẩu</label>
+            <label className="block font-medium text-gray-700">Mật khẩu</label>
             <input
               type="password"
-              className="w-full border p-2 rounded mt-1 focus:ring-2 focus:ring-blue-400"
+              className="w-full border p-3 rounded-md mt-2 focus:ring-2 focus:ring-blue-500 transition-all duration-300 transform hover:scale-105"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              required
+
+              aria-label="Password"
+              placeholder="Nhập mật khẩu của bạn"
             />
           </div>
-          <Button 
-            type="submit" 
-            className="w-full bg-black text-white py-2 rounded"
+          <button
+            type="submit"
+            className="w-full bg-blue-500 text-white py-3 rounded-md hover:bg-blue-600 focus:outline-none transition-all duration-300"
             disabled={loading}
           >
             {loading ? "Đang đăng nhập..." : "Đăng Nhập"}
-          </Button>
+          </button>
         </form>
         <p className="text-center text-sm mt-4">
-          Chưa có tài khoản? <Link href="/register" className="text-blue-500">Đăng ký</Link>
+          Chưa có tài khoản?{" "}
+          <Link href="/register" className="text-blue-500 hover:underline">
+            Đăng ký
+          </Link>
         </p>
       </div>
     </div>

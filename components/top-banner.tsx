@@ -13,7 +13,7 @@ export default function TopBanner() {
 
       {/* Logo */}
       <div className="flex-shrink-0">
-        <Link href={"#"}>
+        <Link href={"/"}>
           <Image
             src="/logo-1.png"
             width={80} // Kích thước logo nhỏ hơn trên mobile

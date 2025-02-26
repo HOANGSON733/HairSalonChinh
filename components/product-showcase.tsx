@@ -49,10 +49,11 @@ export default function ProductShowcase() {
     <section className="py-16 bg-gradient-to-b from-gray-50 to-white">
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl font-extrabold bg-clip-text bg-gradient-to-r from-orange-500 via-red-500 to-yellow-400 text-transparent 
-             tracking-wide drop-shadow-lg shadow-xl font-poppins">
-  HAIR SALON CHÍNH STORE - SỐ 1 VỀ MỸ PHẨM NAM
-</h2>
+          <h2 className="text-3xl font-extrabold">
+            <span className="bg-gradient-to-r from-orange-500 to-yellow-500 text-transparent bg-clip-text">
+              HAIR SALON CHÍNH
+            </span> STORE - SỐ 1 VỀ MỸ PHẨM NAM
+          </h2>
 
           <Link
             href="#"

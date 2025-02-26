@@ -1,21 +1,20 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Image from "next/image"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
-// import { Button } from "@/components/ui/button"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-// import { Minus, Plus, Star } from "lucide-react"
+import { GetProducts } from "@/api/api"
 
-// This would typically come from an API or database
-type Products = {
+// Định nghĩa kiểu dữ liệu cho sản phẩm
+type Product = {
   id: number
   name: string
   price: number
-  originalPrice: string
+  originalPrice?: string
   image: string
-  gallery:string
+  gallery: string[]
   category: string
   description: string
   features: string[]
@@ -28,63 +27,36 @@ type Products = {
   slug: string
   isNew: boolean
   isBestSeller: boolean
-}
-
-const products:any = {
-  ["1"]: {
-    id: 1,
-    name: "Sáp Reuzel Red Pomade Phong Cách Cổ Điển",
-    price: "228,000đ",
-    originalPrice: "250,000đ",
-    image: "https://clmensstore.com/wp-content/uploads/2020/03/Reuzel-Red-Pomade-2.png",
-    gallery: [
-      "https://clmensstore.com/wp-content/uploads/2020/03/Reuzel-Red-Pomade-2.png", 
-      "https://down-vn.img.susercontent.com/file/051c705151482421842bc68ceef55f23", 
-      "https://clmensstore.com/wp-content/uploads/2020/03/DSC_0031-1-1024x683.jpg.webp"],
-    category: "san-pham",
-    description:
-      "Sáp vuốt tóc Reuzel Red Pomade với độ bóng cao, giữ nếp cực tốt, mang đến phong cách cổ điển sang trọng.",
-    features: ["Độ bóng cao", "Giữ nếp mạnh", "Dễ gội rửa", "Hương thơm nam tính"],
-    specifications: {
-      weight: "113g",
-      origin: "Hà Lan",
-      holdLevel: "Cao",
-      shineLevel: "Cao",
-      ingredients: "Water (Aqua), Petrolatum, Beeswax, PVP, etc.",
-      expiry: "36 tháng kể từ ngày sản xuất",
-    },
-    usage: [
-      "Lấy một lượng sáp vừa đủ, xoa đều trong lòng bàn tay",
-      "Vuốt từ gốc đến ngọn tóc",
-      "Có thể sử dụng với tóc ẩm hoặc khô",
-      "Tạo kiểu theo ý muốn",
-    ],
-    inStock: true,
-    isNew: false,
-    isBestSeller: true,
-  },
-  
+  usage: string[]
 }
 
 interface ProductDetailsProps {
-  category: string
   slug: string
 }
 
-export default function ProductDetails({ category, slug }: ProductDetailsProps) {
-  const [selectedImage, setSelectedImage] = useState(0)
-  const [quantity, setQuantity] = useState(1)
+export default function ProductDetails({ slug }: ProductDetailsProps) {
+  console.log("Product Slug:", slug)
+  const [product, setProduct] = useState<Product | null>(null)
+  const [selectedImage, setSelectedImage] = useState<number>(0)
 
-  const product = products[String(slug)]
+  useEffect(() => {
+    const fetchProduct = async () => {
+      try {
+        const data = await GetProducts(slug)
+        setProduct(data)
+      } catch (error) {
+        console.error("Lỗi khi lấy chi tiết sản phẩm:", error)
+      }
+    }
+    if (slug) fetchProduct()
+  }, [slug])
 
-  if (!product) {
-    return <div>Sản phẩm không tồn tại</div>
-  }
+  if (!product) return <p className="text-center text-gray-500">Đang tải sản phẩm...</p>
 
-  return (
+  return ( 
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        {/* Product Images */}
+        {/* Hình ảnh sản phẩm */}
         <div className="space-y-4">
           <div className="relative aspect-square">
             <Image
@@ -99,7 +71,7 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
             </div>
           </div>
           <div className="flex gap-4 overflow-x-auto">
-            {product.gallery.map((image:any, index:any) => (
+            {product.gallery.map((image, index) => (
               <button
                 key={index}
                 onClick={() => setSelectedImage(index)}
@@ -107,28 +79,19 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
                   selectedImage === index ? "border-[#FF9900]" : "border-transparent"
                 }`}
               >
-                <Image
-                  src={image || "/placeholder.svg"}
-                  alt={`${product.name} ${index + 1}`}
-                  fill
-                  className="object-cover"
-                />
+                <Image src={image || "/placeholder.svg"} alt={`${product.name} ${index + 1}`} fill className="object-cover" />
               </button>
             ))}
           </div>
         </div>
 
-        {/* Product Info */}
+        {/* Thông tin sản phẩm */}
         <div className="space-y-6">
           <div>
             <h1 className="text-2xl font-bold mb-2">{product.name}</h1>
-            <div className="flex items-center gap-2 mb-4">
-            </div>
             <div className="flex items-baseline gap-2 mb-4">
-              <span className="text-3xl font-bold text-red-600">{product.price}</span>
-              {product.originalPrice && (
-                <span className="text-lg text-gray-500 line-through">{product.originalPrice}</span>
-              )}
+              <span className="text-3xl font-bold text-red-600">{product.price.toLocaleString()}₫</span>
+              {product.originalPrice && <span className="text-lg text-gray-500 line-through">{product.originalPrice}₫</span>}
             </div>
           </div>
 
@@ -154,18 +117,12 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
         </div>
       </div>
 
-      {/* Product Details Tabs */}
-     <Tabs defaultValue="description" className="mt-8">
+      {/* Tabs chi tiết sản phẩm */}
+      <Tabs defaultValue="description" className="mt-8">
         <TabsList className="w-full justify-start border-b h-auto overflow-x-auto flex">
-          <TabsTrigger value="description" className="px-4 text-sm sm:px-8">
-            Mô tả
-          </TabsTrigger>
-          <TabsTrigger value="specifications" className="px-4 text-sm sm:px-8">
-            Thông số kỹ thuật
-          </TabsTrigger>
-          <TabsTrigger value="usage" className="px-4 text-sm sm:px-8">
-            Hướng dẫn sử dụng
-          </TabsTrigger>
+          <TabsTrigger value="description" className="px-4 text-sm sm:px-8">Mô tả</TabsTrigger>
+          <TabsTrigger value="specifications" className="px-4 text-sm sm:px-8">Thông số kỹ thuật</TabsTrigger>
+          <TabsTrigger value="usage" className="px-4 text-sm sm:px-8">Hướng dẫn sử dụng</TabsTrigger>
         </TabsList>
         <TabsContent value="description" className="mt-4">
           <div className="space-y-4">
@@ -173,10 +130,8 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
             <div>
               <h3 className="font-medium mb-2">Tính năng nổi bật:</h3>
               <ul className="list-disc list-inside space-y-1">
-                {product.features.map((feature: any, index: any) => (
-                  <li key={index} className="text-gray-700">
-                    {feature}
-                  </li>
+                {product.features.map((feature, index) => (
+                  <li key={index} className="text-gray-700">{feature}</li>
                 ))}
               </ul>
             </div>
@@ -187,10 +142,7 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {Object.entries(product.specifications).map(([key, value]) => (
                 <div key={key} className="border-b pb-2">
-                  <span className="font-medium capitalize">
-                    {key.replace(/([A-Z])/g, " $1").trim()}:
-                  </span>{" "}
-                  {value as any}
+                  <span className="font-medium capitalize">{key.replace(/([A-Z])/g, " $1").trim()}:</span> {value}
                 </div>
               ))}
             </div>
@@ -200,17 +152,13 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
           <div className="space-y-4">
             <h3 className="font-medium mb-2">Các bước sử dụng:</h3>
             <ol className="list-decimal list-inside space-y-2">
-              {product.usage.map((step: any, index: any) => (
-                <li key={index} className="text-gray-700">
-                  {step}
-                </li>
+              {product.usage.map((step, index) => (
+                <li key={index} className="text-gray-700">{step}</li>
               ))}
             </ol>
           </div>
         </TabsContent>
       </Tabs>
-
     </div>
   )
 }
-

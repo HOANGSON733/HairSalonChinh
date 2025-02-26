@@ -35,10 +35,10 @@ export default function ProductPage({ params }: ProductPageProps) {
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8">
           <div className="lg:col-span-3">
-            <ProductDetails category={params.category} slug={params.slug} />
+            <ProductDetails slug={params.slug} />
           </div>
           <div className="lg:col-span-1">
-            <ProductSidebar />
+            <ProductSidebar slug={params.slug}/>
           </div>
         </div>
       </div>

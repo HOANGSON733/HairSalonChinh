@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { GetProducts } from "@/api/api";
 import Image from "next/image";
 import Link from "next/link";
@@ -16,7 +16,7 @@ type RelatedProduct = {
   id: number;
   name: string;
   price: string;
-  image: string; // Chỉ là 1 chuỗi, không phải mảng
+  image: string;
   category: string;
   slug: string;
 };
@@ -25,16 +25,20 @@ export default function ProductSidebar() {
   const [getProducts, setGetProducts] = useState<RelatedProduct[]>([]);
 
   useEffect(() => {
+    let isMounted = true;
     const fetchData = async () => {
       try {
         const data = await GetProducts();
-        setGetProducts(data);
+        if (isMounted) setGetProducts(data.slice(0, 5)); // Giới hạn 5 sản phẩm
         console.log("Data", data);
       } catch (error) {
         console.error("Lỗi khi lấy dữ liệu sản phẩm:", error);
       }
     };
     fetchData();
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (
@@ -61,14 +65,16 @@ export default function ProductSidebar() {
             <Link href={`/san-pham/${product.slug}`} key={product.id} className="flex gap-4 group">
               <div className="relative w-16 h-16 flex-shrink-0">
                 <Image
-                  src={product.image || "/placeholder.svg"} 
+                  src={product.image || "/placeholder.svg"}
                   alt={product.name}
                   fill
                   className="object-cover rounded"
                 />
               </div>
               <div>
-                <h3 className="text-sm group-hover:text-[#FF9900] transition-colors line-clamp-2">{product.name}</h3>
+                <h3 className="text-sm group-hover:text-[#FF9900] transition-colors line-clamp-2">
+                  {product.name}
+                </h3>
                 <p className="text-red-600 font-bold">{product.price}.000đ</p>
               </div>
             </Link>
