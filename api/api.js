@@ -12,7 +12,6 @@ export const GetBlogs = async () => {
     }
 };
 
-
 export const GetService = async () => {
     try {
         const response = await axios.get(`${API_URL}/services`);
@@ -23,15 +22,21 @@ export const GetService = async () => {
     }
 };
 
-
-export const GetProducts =async ()=>{
+export const GetProducts = async () => {
     try {
-        const response =await axios.get(`${API_URL}/products`);
+        const response = await axios.get(`${API_URL}/products`);
         return response.data.data;
     } catch (error) {
-        console.log("Lỗi trong API",error);
-        
+        console.log("Lỗi trong API", error);
     }
-}
+};
 
-export const GetDetail
+export const GetDetail = async (category, slug) => {
+    try {
+        const response = await axios.get(`${API_URL}/detail/${category}/${slug}`);
+        return response.data.data;
+    } catch (error) {
+        console.error("Lỗi khi lấy chi tiết sản phẩm:", error);
+        return null; // Trả về null để tránh lỗi `undefined`
+    }
+};
