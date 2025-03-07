@@ -34,4 +34,4 @@ export const GetProducts =async ()=>{
     }
 }
 
-export const GetDetail
+
