@@ -27,10 +27,10 @@ export default function BlogContent() {
         console.error("Lỗi khi lấy dữ liệu blog:", error);
       }
     };
-  
+
     fetchDataBlog();
   }, []);
-  
+
   return (
     <div className="space-y-8 px-2">
       {blogPosts.map((post) => (
@@ -50,7 +50,7 @@ export default function BlogContent() {
               <h2 className="text-xl font-semibold mb-2 group-hover:text-[#FF9900] transition-colors">
                 {post.title}
               </h2>
-           
+
               <p className="text-gray-600 line-clamp-2">{post.description}</p>
             </div>
           </Link>

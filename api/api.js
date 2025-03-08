@@ -31,3 +31,22 @@ export const GetProducts = async () => {
     }
 };
 
+export const GetDetail = async (category, slug) => {
+    try {
+        const response = await axios.get(`${API_URL}/detail/${category}/${slug}`);
+        return response.data.data;
+    } catch (error) {
+        console.error("Lỗi khi lấy chi tiết sản phẩm:", error);
+        return null; // Trả về null để tránh lỗi `undefined`
+    }
+};
+
+export const GetGallery = async () => {
+    try {
+        const response = await axios.get(`${API_URL}/gallery`);
+        return response.data.data;
+    } catch (error) {
+        console.error("Lỗi khi lấy gallery:", error);
+        return [];
+    }
+}
