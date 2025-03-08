@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useMemo } from "react"
 import Image from "next/image"
-import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
@@ -97,7 +96,7 @@ export default function ProductGrid({ category }: ProductGridProps) {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {sortedProducts.map((product) => (
-          <div key={product.id} onClick={() => router.push(`/stone/${product.slug}`)}>
+          <div key={product.id} onClick={() => router.push(`/stone/${product.category}/${product.slug}`)}>
             <Card className="group hover:shadow-lg transition-shadow duration-300 cursor-pointer">
               <CardContent className="p-4">
                 <div className="relative aspect-square mb-4">

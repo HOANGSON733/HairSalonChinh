@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { GetProducts } from "@/api/api"
+import { GetDetail } from "@/api/api"
 
 // Định nghĩa kiểu dữ liệu cho sản phẩm
 type Product = {
@@ -31,10 +31,12 @@ type Product = {
 }
 
 interface ProductDetailsProps {
+  category: string
   slug: string
 }
 
-export default function ProductDetails({ slug }: ProductDetailsProps) {
+export default function ProductDetails({ category, slug }: ProductDetailsProps) {
+  console.log("Product Category:", category)
   console.log("Product Slug:", slug)
   const [product, setProduct] = useState<Product | null>(null)
   const [selectedImage, setSelectedImage] = useState<number>(0)
@@ -42,14 +44,14 @@ export default function ProductDetails({ slug }: ProductDetailsProps) {
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const data = await GetProducts(slug)
+        const data = await GetDetail(category, slug)
         setProduct(data)
       } catch (error) {
         console.error("Lỗi khi lấy chi tiết sản phẩm:", error)
       }
     }
-    if (slug) fetchProduct()
-  }, [slug])
+    if (category && slug) fetchProduct()
+  }, [category, slug])
 
   if (!product) return <p className="text-center text-gray-500">Đang tải sản phẩm...</p>
 

@@ -12,7 +12,6 @@ export const GetBlogs = async () => {
     }
 };
 
-
 export const GetService = async () => {
     try {
         const response = await axios.get(`${API_URL}/services`);
@@ -23,15 +22,12 @@ export const GetService = async () => {
     }
 };
 
-
-export const GetProducts =async ()=>{
+export const GetProducts = async () => {
     try {
-        const response =await axios.get(`${API_URL}/products`);
+        const response = await axios.get(`${API_URL}/products`);
         return response.data.data;
     } catch (error) {
-        console.log("Lỗi trong API",error);
-        
+        console.log("Lỗi trong API", error);
     }
-}
-
+};
 

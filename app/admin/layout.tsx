@@ -1,33 +1,46 @@
-import { redirect } from "next/navigation"
-import AdminSidebar from "@/components/admin/admin-sidebar"
-import AdminHeader from "@/components/admin/admin-header"
-import type { Metadata } from "next"
-import type React from "react" // Added import for React
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+// import { ThemeProvider } from '@/src/components/theme-provider'
+// import { Toaster } from '@/src/components/ui/toaster'
+// import AppProvider from '@/app/app-provider'
+// import SlideSession from '@/components/slide-session'
+// import { baseOpenGraph } from '@/app/shared-metadata'
+// import dynamic from 'next/dynamic'
+// import Header from '@/components/header'
+// const Header = dynamic(() => import('@/components/header'), { ssr: false })
+const inter = Inter({ subsets: ['vietnamese'] })
 
 export const metadata: Metadata = {
-  title: "Admin Dashboard - Min's Hair & Skin",
-  description: "Admin dashboard for Min's Hair & Skin",
+  title: {
+    template: '%s | Productic',
+    default: 'Productic'
+  },
+  // description: 'Được tạo bởi Được dev',
+  // openGraph: baseOpenGraph
 }
-export default async function AdminLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
 
+export default async function RootLayout({
+  children
+}: Readonly<{
+  children: React.ReactNode
+}>) {
   return (
-    <div className="min-h-screen bg-gray-100">
-      {/* <AdminHeader /> */}
-      <div className="flex pt-16">
-        {" "}
-        {/* Added pt-16 for header height */}
-        {/* <AdminSidebar /> */}
-        <main className="flex-1 ml-64 p-8">
-          {" "}
-          {/* Added ml-64 for sidebar width */}
-          {children}
-        </main>
-      </div>
-    </div>
+    <html lang='en' suppressHydrationWarning>
+      <body className={`${inter.className}`}>
+        {/* <Toaster /> */}
+        {/* <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem
+          disableTransitionOnChange
+        > */}
+          {/* <AppProvider> */}
+            {/* <Header /> */}
+            {children}
+            {/* <SlideSession /> */}
+          {/* </AppProvider> */}
+        {/* </ThemeProvider> */}
+      </body>
+    </html>
   )
 }
-
