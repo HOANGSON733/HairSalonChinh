@@ -5,7 +5,8 @@ export default function AdminHome() {
     <div className="space-y-8">
       <div>
         {/* <Login />  */}
-        <AdminSide />
+          
+        {/* <AdminSide /> */}
       </div>
 
     </div>

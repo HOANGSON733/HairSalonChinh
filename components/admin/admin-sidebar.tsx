@@ -67,58 +67,83 @@
 //     </aside>
 //   )
 // }
-"use client"
-import React, { useState } from 'react';
+"use client";
+// import { IoMdCut } from "react-icons/io";
+import React, { useState } from "react";
+import { useRouter } from "next/navigation";
+import { motion } from "framer-motion";
 import {
   AppstoreOutlined,
   PictureOutlined,
   FileImageOutlined,
   SettingOutlined,
   DashboardOutlined,
-} from '@ant-design/icons';
-import { Menu, Layout, } from 'antd';
-import Sider from 'antd/es/layout/Sider';
+} from "@ant-design/icons";
+import { Menu, Layout } from "antd";
+
+const { Sider } = Layout;
 
 const GalleryApp = () => {
-  const [collapsed] = useState(false);
-  // Menu items for the sidebar
+  const [collapsed, setCollapsed] = useState(false);
+  const router = useRouter();
+
+  const handleMenuClick = (e: { key: any }) => {
+    router.push(`/${e.key}`);
+  };
+
   const items = [
-    { key: 'dashboard', icon: <DashboardOutlined />, label: 'Dashboard' },
-    { key: 'gallery', icon: <PictureOutlined />, label: 'Gallery' },
-    { key: 'new', icon: <PictureOutlined />, label: 'Gallery' },
-    { key: 'blog', icon: <PictureOutlined />, label: 'Gallery' },
+    { key: "admin/dashboard", icon: <DashboardOutlined />, label: "Dashboard" },
+    { key: "admin/gallery", icon: <PictureOutlined />, label: "Gallery" },
+    { key: "new", icon: <PictureOutlined />, label: "New" },
+    { key: "blog", icon: <PictureOutlined />, label: "Blog" },
     {
-      key: 'categories',
+      key: "categories",
       icon: <AppstoreOutlined />,
-      label: 'Categories',
+      label: "Categories",
       children: [
-        { key: 'nature', label: 'Nature' },
-        { key: 'city', label: 'City' },
-        { key: 'abstract', label: 'Abstract' },
-      ]
+        { key: "nature", label: "Nature" },
+        { key: "city", label: "City" },
+        { key: "abstract", label: "Abstract" },
+      ],
     },
-    { key: 'uploads', icon: <FileImageOutlined />, label: 'Uploads' },
-    { key: 'settings', icon: <SettingOutlined />, label: 'Settings' },
+    { key: "uploads", icon: <FileImageOutlined />, label: "Uploads" },
+    { key: "settings", icon: <SettingOutlined />, label: "Settings" },
   ];
 
-
   return (
-    <Layout style={{ minHeight: '100vh' }}>
-      <Sider trigger={null} collapsible collapsed={collapsed} theme="dark">
-        <div className="flex justify-center py-4">
-          <FileImageOutlined style={{ fontSize: '24px', color: 'white' }} />
-          {!collapsed && <span className="text-white text-lg ml-2 font-semibold">Gallery App</span>}
-        </div>
-        <Menu
+    <div style={{ minHeight: "100vh" }}>
+      <Layout>
+        <Sider
+          collapsible
+          collapsed={collapsed}
+          onCollapse={(value) => setCollapsed(value)}
           theme="dark"
-          mode="inline"
-          defaultSelectedKeys={['gallery']}
-          defaultOpenKeys={['categories']}
-          items={items}
-        />
-      </Sider>
-
-    </Layout>
+        >
+          <div className="flex justify-center py-4">
+            <motion.div
+              animate={{
+                rotate: collapsed ? 360 : 0, // Xoay icon khi thu gọn / mở rộng
+                scale: collapsed ? 0.8 : 1.2, // Thu nhỏ khi gọn, phóng to khi mở
+              }}
+              transition={{ duration: 0.3, ease: "easeInOut" }}
+            >
+              <img src="/Logo-1.png" alt="" width={30} />
+            </motion.div>
+            {!collapsed && (
+              <span className="text-white text-lg ml-2 font-semibold">Admin</span>
+            )}
+          </div>
+          <Menu
+            theme="dark"
+            mode="inline"
+            defaultSelectedKeys={["gallery"]}
+            defaultOpenKeys={["categories"]}
+            items={items}
+            onClick={handleMenuClick}
+          />
+        </Sider>
+      </Layout>
+    </div>
   );
 };
 

@@ -1,13 +1,7 @@
 import type { Metadata } from 'next'
+import AdminSide from "@/components/admin/admin-sidebar"
 import { Inter } from 'next/font/google'
-// import { ThemeProvider } from '@/src/components/theme-provider'
-// import { Toaster } from '@/src/components/ui/toaster'
-// import AppProvider from '@/app/app-provider'
-// import SlideSession from '@/components/slide-session'
-// import { baseOpenGraph } from '@/app/shared-metadata'
-// import dynamic from 'next/dynamic'
-// import Header from '@/components/header'
-// const Header = dynamic(() => import('@/components/header'), { ssr: false })
+
 const inter = Inter({ subsets: ['vietnamese'] })
 
 export const metadata: Metadata = {
@@ -15,31 +9,27 @@ export const metadata: Metadata = {
     template: '%s | Productic',
     default: 'Productic'
   },
-  // description: 'Được tạo bởi Được dev',
-  // openGraph: baseOpenGraph
 }
 
-export default async function RootLayout({
+export default function RootLayout({
   children
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
     <html lang='en' suppressHydrationWarning>
-      <body className={`${inter.className}`}>
-        {/* <Toaster /> */}
-        {/* <ThemeProvider
-          attribute='class'
-          defaultTheme='system'
-          enableSystem
-          disableTransitionOnChange
-        > */}
-          {/* <AppProvider> */}
-            {/* <Header /> */}
+      <body className={`${inter.className} bg-gray-100`}>
+        <div className="flex min-h-screen">
+          {/* Sidebar */}
+          <div >
+            <AdminSide />
+          </div>
+
+          {/* Nội dung chính */}
+          <div className="flex-1 p-6 md:p-10 bg-white rounded-lg shadow-md">
             {children}
-            {/* <SlideSession /> */}
-          {/* </AppProvider> */}
-        {/* </ThemeProvider> */}
+          </div>
+        </div>
       </body>
     </html>
   )
