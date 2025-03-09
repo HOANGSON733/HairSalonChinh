@@ -22,7 +22,7 @@ const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-export default function GalleryContent() {
+export default function   GalleryContent() {
   const [selectedTab, setSelectedTab] = useState<string>("all");
   const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null);
   const [GalleryPosts, setGalleryPosts] = useState<GalleryItem[]>([]);
@@ -40,7 +40,7 @@ export default function GalleryContent() {
   }, []);
 
   const filteredItems = selectedTab === "all" ? GalleryPosts : GalleryPosts.filter((item) => item.category === selectedTab);
-
+  
   return (
     <div className="space-y-8">
       <div className="text-center">

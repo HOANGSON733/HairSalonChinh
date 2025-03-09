@@ -12,13 +12,12 @@ export interface GalleryItem {
   }
   
   export const GALLERY_CATEGORIES: GalleryCategory[] = [
-    { value: "all", label: "Tất cả" },
-    { value: "hairstyles", label: "Kiểu tóc" },
-    { value: "services", label: "Dịch vụ" },
-    { value: "hair", label: "Tóc uốn" },
-    { value: "academy", label: "Phun xăm thẩm mỹ" },
-    { value: "facility", label: "Cơ sở vật chất" },
-    { value: "events", label: "Sự kiện" },
+    { value: "kieu-toc", label: "Kiểu tóc" },
+    { value: "dich-vu", label: "Dịch vụ" },
+    { value: "toc-nam", label: "Tóc uốn" },
+    { value: "phun-xam-tham-my", label: "Phun xăm thẩm mỹ" },
+    { value: "co-so-vat-chat", label: "Cơ sở vật chất" },
+    { value: "su-kien", label: "Sự kiện" },
 
   ]
   
