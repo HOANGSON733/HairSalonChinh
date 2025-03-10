@@ -8,7 +8,7 @@ type getService = {
   id: number;
   title: string;
   content: string;
-  image: string[]; // 🛠️ Mảng chứa nhiều ảnh
+  image?: string[]; // 🛠️ Dấu `?` giúp tránh lỗi nếu image không tồn tại
   description: string;
   slug: string;
   excerpt?: string;
@@ -42,11 +42,11 @@ export default function ServiceContent() {
           >
             <Link href={`/dich-vu/${service.slug}`} className="group">
               <div className="grid grid-cols-2 gap-6 mb-6">
-                {/* 🛠️ Hiển thị tối đa 2 ảnh từ mảng */}
-                {service.image.slice(0, 2).map((img, index) => (
+                {/* 🛠️ Kiểm tra nếu có ảnh mới hiển thị */}
+                {(service.image && service.image.length > 0 ? service.image.slice(0, 2) : ["/placeholder.svg"]).map((img, index) => (
                   <div key={index} className="relative aspect-[4/3] overflow-hidden rounded-xl">
                     <Image
-                      src={img || "/placeholder.svg"}
+                      src={img}
                       alt={`${service.title} - Image ${index + 1}`}
                       fill
                       className="object-cover transform group-hover:scale-105 transition-transform duration-300"
