@@ -16,7 +16,7 @@ type ServiceType = {
   excerpt?: string;
 };
 
-const MAX_LENGTH = 150; // Giới hạn số ký tự hiển thị của mô tả
+const MAX_LENGTH = 250; // Giới hạn số ký tự hiển thị của mô tả
 
 export default function DetailService() {
   const [expanded, setExpanded] = useState(false);
@@ -69,7 +69,7 @@ export default function DetailService() {
       {/* Mô tả dịch vụ */}
       {service.description1 && (
         <p className="text-gray-700 text-lg mt-4 text-justify break-words">
-          {expanded ? service.description1 : service.description1.substring(0, MAX_LENGTH) + "... "}
+          {expanded ? service.description1 : service.description1.substring(0, MAX_LENGTH)}
           {service.description1.length > MAX_LENGTH && (
             <button
               className="text-blue-500 hover:underline ml-2"
