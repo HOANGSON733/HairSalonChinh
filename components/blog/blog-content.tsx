@@ -35,7 +35,7 @@ export default function BlogContent() {
     <div className="space-y-8 px-2">
       {blogPosts.map((post) => (
         <article key={post.id} className="group relative">
-          <Link href={`/blog/${post.slug}`} className="flex gap-6">
+          <Link href={`/blog/${post.id}`} className="flex gap-6">
             <div className="w-1/3">
               <div className="relative aspect-[4/3]">
                 <Image

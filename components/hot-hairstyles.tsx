@@ -23,9 +23,9 @@ export default function HotHairstyles() {
   };
 
   const hairstyles = [
-    { id: 1, stylist: "Hair Salon Chính", idtiktok: "7469067520276778258" },
-    { id: 2, stylist: "Hair Salon Chính", idtiktok: "7092765258560916763" },
-    { id: 3, stylist: "Hair Salon Chính", idtiktok: "7366887566626262290" },
+    { id: 1, stylist: "Hair Salon Chính", idtiktok: "7481211240405110024" },
+    { id: 2, stylist: "Hair Salon Chính", idtiktok: "7414055717830708487" },
+    { id: 3, stylist: "Hair Salon Chính", idtiktok: "7197640975106329882" },
     { id: 4, stylist: "Hair Salon Chính", idtiktok: "7459824141475024135" },
     { id: 5, stylist: "Hair Salon Chính", idtiktok: "7444059899396427026" },
     { id: 6, stylist: "Hair Salon Chính", idtiktok: "7470091900553317640" },
@@ -66,7 +66,7 @@ export default function HotHairstyles() {
                   </h3>
                   <p className="text-gray-300 text-xs md:text-sm mb-2">Stylist: {style.stylist}</p>
                   <div className="flex items-center text-white gap-2 text-sm md:text-base">
-                    {likesData[style.idtiktok]?.likes?.toLocaleString() || "Đang tải..."} ❤️
+                  ❤️{likesData[style.idtiktok]?.likes?.toLocaleString() || "Đang tải..."} 
                   </div>
                 </div>
               </div>

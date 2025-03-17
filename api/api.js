@@ -31,6 +31,31 @@ export const GetProducts = async () => {
     }
 };
 
+
+
+export const GetDetailBlog = async (id) => {
+    try {
+      if (!id) {
+        throw new Error("id không hợp lệ!");
+      }
+      console.log("Fetching blog with id:", id); // Debug id
+      const response = await axios.get(`${API_URL}/blogs/${id}`);
+      console.log("API response:", response.data);
+      if (response.status === 200 && response.data && response.data.data) {
+        
+        return response.data.data;
+      } else {
+        console.warn("Dữ liệu trả về không hợp lệ:", response);
+        return null;
+      }
+    } catch (error) {
+      console.error("Lỗi khi lấy chi tiết blog:", error);
+      return null;
+    }
+  };
+
+
+
 export const GetDetail = async (category, slug) => {
     try {
         const response = await axios.get(`${API_URL}/detail/${category}/${slug}`);
