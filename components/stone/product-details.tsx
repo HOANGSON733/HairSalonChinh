@@ -5,7 +5,7 @@ import Image from "next/image"
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Card } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
-import { GetDetail } from "@/api/api"
+import { GetDetailProduct } from "@/api/api"
 
 // Định nghĩa kiểu dữ liệu cho sản phẩm
 type Product = {
@@ -31,31 +31,34 @@ type Product = {
 }
 
 interface ProductDetailsProps {
-  category: string
-  slug: string
+  // category: string
+  // slug: string
+  id: number
 }
 
-export default function ProductDetails({ category, slug }: ProductDetailsProps) {
-  console.log("Product Category:", category)
-  console.log("Product Slug:", slug)
+export default function ProductDetails({ id }: ProductDetailsProps) {
+  // console.log("Product Category:", category)
+  console.log("Product Slug:", id)
   const [product, setProduct] = useState<Product | null>(null)
   const [selectedImage, setSelectedImage] = useState<number>(0)
 
   useEffect(() => {
     const fetchProduct = async () => {
       try {
-        const data = await GetDetail(category, slug)
+        const data = await GetDetailProduct(id)
+        console.log("Dữ liệu sản phẩm:", data) // Kiểm tra dữ liệu
         setProduct(data)
       } catch (error) {
         console.error("Lỗi khi lấy chi tiết sản phẩm:", error)
       }
     }
-    if (category && slug) fetchProduct()
-  }, [category, slug])
+    if (id) fetchProduct()
+  }, [id])
+
 
   if (!product) return <p className="text-center text-gray-500">Đang tải sản phẩm...</p>
 
-  return ( 
+  return (
     <div className="space-y-8">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* Hình ảnh sản phẩm */}
@@ -77,9 +80,8 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
               <button
                 key={index}
                 onClick={() => setSelectedImage(index)}
-                className={`relative w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden ${
-                  selectedImage === index ? "border-[#FF9900]" : "border-transparent"
-                }`}
+                className={`relative w-20 aspect-square flex-shrink-0 border-2 rounded-lg overflow-hidden ${selectedImage === index ? "border-[#FF9900]" : "border-transparent"
+                  }`}
               >
                 <Image src={image || "/placeholder.svg"} alt={`${product.name} ${index + 1}`} fill className="object-cover" />
               </button>
@@ -97,25 +99,26 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
             </div>
           </div>
 
-          <div className="space-y-4">
+          {product.specifications && (
             <Card className="p-4">
               <h3 className="font-medium mb-2">Thông số sản phẩm:</h3>
               <div className="grid grid-cols-2 gap-4 text-sm">
                 <div>
-                  <span className="font-medium">Khối lượng:</span> {product.specifications.weight}
+                  <span className="font-medium">Khối lượng:</span> {product.specifications.weight || "Không có dữ liệu"}
                 </div>
                 <div>
-                  <span className="font-medium">Xuất xứ:</span> {product.specifications.origin}
+                  <span className="font-medium">Xuất xứ:</span> {product.specifications.origin || "Không có dữ liệu"}
                 </div>
                 <div>
-                  <span className="font-medium">Độ giữ nếp:</span> {product.specifications.holdLevel}
+                  <span className="font-medium">Độ giữ nếp:</span> {product.specifications.holdLevel || "Không có dữ liệu"}
                 </div>
                 <div>
-                  <span className="font-medium">Độ bóng:</span> {product.specifications.shineLevel}
+                  <span className="font-medium">Độ bóng:</span> {product.specifications.shineLevel || "Không có dữ liệu"}
                 </div>
               </div>
             </Card>
-          </div>
+          )}
+
         </div>
       </div>
 
@@ -131,33 +134,48 @@ export default function ProductDetails({ category, slug }: ProductDetailsProps) 
             <p className="text-gray-700">{product.description}</p>
             <div>
               <h3 className="font-medium mb-2">Tính năng nổi bật:</h3>
-              <ul className="list-disc list-inside space-y-1">
-                {product.features.map((feature, index) => (
-                  <li key={index} className="text-gray-700">{feature}</li>
-                ))}
-              </ul>
+              {Array.isArray(product.features) && product.features.length > 0 ? (
+                <ul className="list-disc list-inside space-y-1">
+                  {product.features.map((feature, index) => (
+                    <li key={index} className="text-gray-700">{feature}</li>
+                  ))}
+                </ul>
+              ) : (
+                <p className="text-gray-500">Không có tính năng nổi bật nào.</p>
+              )}
+
             </div>
           </div>
         </TabsContent>
         <TabsContent value="specifications" className="mt-4">
           <div className="space-y-4">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              {Object.entries(product.specifications).map(([key, value]) => (
-                <div key={key} className="border-b pb-2">
-                  <span className="font-medium capitalize">{key.replace(/([A-Z])/g, " $1").trim()}:</span> {value}
-                </div>
-              ))}
-            </div>
+            {product.specifications ? (
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {Object.entries(product.specifications).map(([key, value]) => (
+                  <div key={key} className="border-b pb-2">
+                    <span className="font-medium capitalize">{key.replace(/([A-Z])/g, " $1").trim()}:</span> {value}
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <p className="text-gray-500">Không có thông số kỹ thuật.</p>
+            )}
+
           </div>
         </TabsContent>
         <TabsContent value="usage" className="mt-4">
           <div className="space-y-4">
             <h3 className="font-medium mb-2">Các bước sử dụng:</h3>
-            <ol className="list-decimal list-inside space-y-2">
-              {product.usage.map((step, index) => (
-                <li key={index} className="text-gray-700">{step}</li>
-              ))}
-            </ol>
+            {Array.isArray(product.usage) && product.usage.length > 0 ? (
+              <ol className="list-decimal list-inside space-y-2">
+                {product.usage.map((step, index) => (
+                  <li key={index} className="text-gray-700">{step}</li>
+                ))}
+              </ol>
+            ) : (
+              <p className="text-gray-500">Chưa có hướng dẫn sử dụng.</p>
+            )}
+
           </div>
         </TabsContent>
       </Tabs>

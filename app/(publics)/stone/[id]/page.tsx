@@ -6,6 +6,7 @@ interface ProductPageProps {
   params: {
     category: string
     slug: string
+    id: number
   }
 }
 
@@ -35,10 +36,10 @@ export default function ProductPage({ params }: ProductPageProps) {
 
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-8 mt-8">
           <div className="lg:col-span-3">
-            <ProductDetails slug={params.slug} />
+            <ProductDetails id={params.id} />
           </div>
           <div className="lg:col-span-1">
-            <ProductSidebar slug={params.slug}/>
+            {/* <ProductSidebar id={params.id}/> */}
           </div>
         </div>
       </div>
