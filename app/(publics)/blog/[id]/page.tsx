@@ -76,8 +76,8 @@ export default function BlogPostPage() {
             <p className="text-gray-600 mb-2">
               Tác giả: <strong>{post.name}</strong>
             </p>
-            <img src={post.image} alt={post.title} width={640} className="mt-4 rounded-lg shadow-md text-center" />
-            <div dangerouslySetInnerHTML={{ __html: post.content }} />
+            {/* <img src={post.image} alt={post.title} width={40} className="mt-4 rounded-lg shadow-md text-center" /> */}
+            <div className="text-justify" dangerouslySetInnerHTML={{ __html: post.content }} />
           </div>
           <div className="lg:col-span-1">
             <AboutSidebar />

@@ -1,74 +1,53 @@
-"use client"
+"use client";
 
-import { useState, useEffect } from "react"
-import Image from "next/image"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import { Banners } from "@/api/api";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 
-const slides = [
-  {
-    id: 1,
-    type: "hairstyle",
-    content: {
-      title: "TÓC UỐN CON SÂU",
-      hashtags: "#TEXTURE #LAYER #MOHICAN",
-      subtitle: "KIỂU TÓC DẪN ĐẦU",
-      year: "XU HƯỚNG 2020",
-      image: "slide-30s1.jpg",
-    },
-  },
-  {
-    id: 2,
-    type: "promotion",
-    content: {
-      title: "SALON 30SHINE",
-      subtitle: "MỞ CỬA TRỞ LẠI",
-      description: "Để đẹp trai ngay khi hết dịch, anh hãy mua ngay",
-      promotion: "GÓI TRẢ TRƯỚC TOPUP",
-      subPromotion: "SIÊU ƯU ĐÃI CỦA 30SHINE NHÉ!",
-      image: "slide-30s2.jpg",
-    },
-  },
-  {
-    id: 3,
-    type: "secret",
-    content: {
-      mainText: "MUỐN ĐẸP TRAI",
-      highlight: "ĐẾN 30SHINE",
-      subtitle: "BÍ QUYẾT ĐẸP TRAI",
-      description: "của Duy Mạnh và Đình Trọng\nTuyển thủ ĐTQG Việt Nam",
-      image: "slide-30s3.jpg",
-    },
-  },
-  {
-    id: 3,
-    type: "secret",
-    content: {
-      mainText: "MUỐN ĐẸP TRAI",
-      highlight: "ĐẾN 30SHINE",
-      subtitle: "BÍ QUYẾT ĐẸP TRAI",
-      description: "của Duy Mạnh và Đình Trọng\nTuyển thủ ĐTQG Việt Nam",
-      image: "slide-30s4.jpg",
-    },
-  },
-]
+type Slide = {
+  title: string;
+  image: string;
+};
 
 export default function HeroSlider() {
-  const [currentSlide, setCurrentSlide] = useState(0)
+  const [slides, setSlides] = useState<Slide[]>([]);
+  const [currentSlide, setCurrentSlide] = useState(0);
+
+  // Lấy dữ liệu banner
+  useEffect(() => {
+    const fetchDataBanner = async () => {
+      try {
+        const data = await Banners();
+        setSlides(Array.isArray(data.data) ? data.data : data);
+        console.log("Data", data);
+      } catch (error) {
+        console.error("Lỗi khi lấy dữ liệu banner:", error);
+      }
+    };
+    fetchDataBanner();
+  }, []);
 
   // Auto-advance slides
   useEffect(() => {
-    const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % slides.length)
-    }, 5000)
-    return () => clearInterval(timer)
-  }, [])
+    if (slides.length > 0) {
+      const timer = setInterval(() => {
+        setCurrentSlide((prev) => (prev + 1) % slides.length);
+      }, 5000);
+      return () => clearInterval(timer);
+    }
+  }, [slides]);
 
   const nextSlide = () => {
-    setCurrentSlide((prev) => (prev + 1) % slides.length)
-  }
+    setCurrentSlide((prev) => (prev + 1) % slides.length);
+  };
 
   const prevSlide = () => {
-    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)
+    setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
+  };
+
+  if (slides.length === 0) {
+    return <div>Đang tải...</div>; // Hiển thị khi chưa có dữ liệu
   }
 
   return (
@@ -78,10 +57,10 @@ export default function HeroSlider() {
         style={{ transform: `translateX(-${currentSlide * 100}%)` }}
       >
         {slides.map((slide, index) => (
-          <div key={slide.id} className="relative w-full h-full flex-shrink-0">
+          <div key={index} className="relative w-full h-full flex-shrink-0">
             <Image
-              src={slide.content.image || "/placeholder.svg"}
-              alt={slide.type}
+              src={slide.image || "/placeholder.svg"}
+              alt={slide.title}
               fill
               className="object-cover"
               priority={index === 0}
@@ -121,5 +100,5 @@ export default function HeroSlider() {
         ))}
       </div>
     </div>
-  )
+  );
 }
