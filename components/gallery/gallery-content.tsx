@@ -22,7 +22,7 @@ const capitalizeFirstLetter = (string: string) => {
   return string.charAt(0).toUpperCase() + string.slice(1);
 };
 
-export default function   GalleryContent() {
+export default function GalleryContent() {
   const [selectedTab, setSelectedTab] = useState<string>("all");
   const [selectedImage, setSelectedImage] = useState<{ src: string; title: string } | null>(null);
   const [GalleryPosts, setGalleryPosts] = useState<GalleryItem[]>([]);
@@ -31,16 +31,20 @@ export default function   GalleryContent() {
     const fetchGallery = async () => {
       try {
         const data = await GetGallery();
-        setGalleryPosts(data);
+        // Chỉ cập nhật state nếu dữ liệu thực sự thay đổi
+        if (JSON.stringify(data) !== JSON.stringify(GalleryPosts)) {
+          setGalleryPosts(data);
+        }
       } catch (error) {
         console.error("Lỗi khi lấy dữ liệu gallery:", error);
       }
     };
     fetchGallery();
-  }, []);
+  }, []); // Chỉ chạy 1 lần khi component mount
+
 
   const filteredItems = selectedTab === "all" ? GalleryPosts : GalleryPosts.filter((item) => item.category === selectedTab);
-  
+
   return (
     <div className="space-y-8">
       <div className="text-center">
@@ -50,7 +54,13 @@ export default function   GalleryContent() {
         </p>
       </div>
 
-      <Tabs activeKey={selectedTab} onChange={setSelectedTab} className="w-full">
+      <Tabs
+        activeKey={selectedTab}
+        onChange={(key) => {
+          if (key !== selectedTab) setSelectedTab(key); // Chỉ cập nhật khi giá trị thay đổi
+        }}
+        className="w-full"
+      >
         <TabPane tab="Tất cả" key="all" />
         {GALLERY_CATEGORIES.map((category) => (
           <TabPane tab={capitalizeFirstLetter(category.label)} key={category.value} />
