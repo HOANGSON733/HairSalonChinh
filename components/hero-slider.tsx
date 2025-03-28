@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { Banners } from "@/api/api";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { Spin } from "antd";
 
 type Slide = {
   title: string;
@@ -13,6 +14,7 @@ type Slide = {
 export default function HeroSlider() {
   const [slides, setSlides] = useState<Slide[]>([]);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [loading, setLoading] = useState(true);
 
   // Lấy dữ liệu banner
   useEffect(() => {
@@ -20,9 +22,10 @@ export default function HeroSlider() {
       try {
         const data = await Banners();
         setSlides(Array.isArray(data.data) ? data.data : data);
-        console.log("Data", data);
       } catch (error) {
         console.error("Lỗi khi lấy dữ liệu banner:", error);
+      } finally {
+        setLoading(false);
       }
     };
     fetchDataBanner();
@@ -46,8 +49,16 @@ export default function HeroSlider() {
     setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length);
   };
 
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+        <Spin size="large" />
+      </div>
+    );
+  }
+
   if (slides.length === 0) {
-    return <div>Đang tải...</div>; // Hiển thị khi chưa có dữ liệu
+    return <div className="text-center">Không có dữ liệu banner</div>;
   }
 
   return (

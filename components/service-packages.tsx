@@ -4,7 +4,7 @@ import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
 import { Card, CardContent } from "@/components/ui/card"
 import Image from "next/image"
 import { Crown } from "lucide-react"
-
+import Link from "next/link"
 const services = [
   {
     category: "uon",
@@ -124,8 +124,8 @@ const services = [
       }
     ]
   }
-  
-  
+
+
 ]
 
 const packages = [
@@ -144,7 +144,7 @@ const packages = [
   {
     image: "/banenr-dv5.jpg",
   },
-   {
+  {
     image: "/banenr-dv6.jpg",
   },
 ]
@@ -155,12 +155,12 @@ export default function ServicePackages() {
       <div className="container mx-auto">
         <div className="flex justify-between items-center mb-8 p-2">
           <h2 className="text-3xl font-bold text-white">DỊCH VỤ TẠI <span className="bg-gradient-to-r from-orange-500 to-yellow-500 text-transparent bg-clip-text">
-  HAIR SALON CHÍNH
-</span>
-</h2>
-          <a href="#" className="text-[#FF9900] hover:underline">
+            HAIR SALON CHÍNH
+          </span>
+          </h2>
+          <Link href="/dich-vu" className="text-[#FF9900] hover:underline">
             XEM TẤT CẢ →
-          </a>
+          </Link>
         </div>
 
         <Tabs defaultValue="combo" className="w-full" >
@@ -172,22 +172,22 @@ export default function ServicePackages() {
             <TabsTrigger value="khac" className="text-zinc-400 px-6 py-4">Khác</TabsTrigger>
           </TabsList>
 
-            {/* Tab Combo */}
-            <TabsContent value="combo">
-              <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 p-2">
-                {packages.map((pkg, index) => (
-                  <div key={index} className="overflow-hidden rounded-lg shadow-lg">
-                    <Image
-                      src={pkg.image}
-                      alt={`Combo ${index + 1}`}
-                      width={300}
-                      height={200}
-                      className="object-cover w-full h-auto rounded"
-                    />
-                  </div>
-                ))}
-              </div>
-            </TabsContent>
+          {/* Tab Combo */}
+          <TabsContent value="combo">
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 p-2">
+              {packages.map((pkg, index) => (
+                <div key={index} className="overflow-hidden rounded-lg shadow-lg">
+                  <Image
+                    src={pkg.image}
+                    alt={`Combo ${index + 1}`}
+                    width={300}
+                    height={200}
+                    className="object-cover w-full h-auto rounded"
+                  />
+                </div>
+              ))}
+            </div>
+          </TabsContent>
 
           {/* Tab Uốn */}
           <TabsContent value="uon">

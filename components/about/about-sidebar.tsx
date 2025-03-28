@@ -89,7 +89,7 @@ export default function AboutSidebar() {
           BÀI VIẾT LIÊN QUAN
         </h2>
         <div className="space-y-4">
-          {news.map((item) => (
+          {news.slice(0, 6).map((item) => (
             <Link
               href={`/blog/${item.id}`}
               key={item.id}
