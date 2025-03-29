@@ -100,7 +100,7 @@ export default function ProductDetails({ id }: ProductDetailsProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 p-6">
           {/* Hình ảnh sản phẩm */}
           <div className="space-y-6">
-            <div className="relative aspect-square rounded-lg overflow-hidden bg-gray-100">
+            <div className="relative aspect-square rounded-lg overflow-hidden bg-gray-100">      
               <Image
                 src={product.gallery[selectedImage] || "/placeholder.svg"}
                 alt={product.name}
