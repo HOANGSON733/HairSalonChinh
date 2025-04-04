@@ -18,7 +18,7 @@ export default function ProductsPage() {
 
         <div>
           <div className="lg:col-span-3">
-            <ProductGrid category="all" />
+            <ProductGrid category1="nail" />
           </div>
           <div className="lg:col-span-1">
             {/* <ProductSidebar /> */}

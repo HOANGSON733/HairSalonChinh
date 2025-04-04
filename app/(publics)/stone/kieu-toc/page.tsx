@@ -18,7 +18,7 @@ export default function ProductsPage() {
 
         <div>
           <div className="lg:col-span-3">
-            <ProductGrid category="all" />
+            <ProductGrid category1="kieu-toc-nam" id={0} name={""} image={""} />
           </div>
           <div className="lg:col-span-1">
             {/* <ProductSidebar /> */}

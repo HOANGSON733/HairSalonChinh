@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import {
   Select,
@@ -9,79 +9,58 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Image } from "antd";
+import { GetGallery } from "@/api/api";
 
-const products = [
-  {
-    id: 1,
-    name: "Nail đính đá sang trọng",
-    image: "/nail-3.png",
-    category: "mong-tay",
-  },
-  {
-    id: 2,
-    name: "Nail màu pastel nhẹ nhàng",
-    image: "/nail-1.jpg",
-    category: "mong-tay",
-  },
-  {
-    id: 3,
-    name: "Nail họa tiết tối giản",
-    image: "/nail-2.jpg",
-    category: "mong-tay",
-  },
-  {
-    id: 4,
-    name: "Nail ombre thời thượng",
-    image: "/nail-4.jpg",
-    category: "mong-tay",
-  },
-  {
-    id: 5,
-    name: "Nail chân classic",
-    image: "/nail-5.webp",
-    category: "mong-chan",
-  },
-  {
-    id: 6,
-    name: "Nail chân đính đá quý phái",
-    image: "/nail-6.jpg",
-    category: "mong-chan",
-  },
-];
-
-
-interface ProductGridProps {
-  category: string;
+interface Nail {
+  id: number;
+  name: string;
+  image: string;
+  category1: string;
 }
 
-export default function ProductGrid({ category }: ProductGridProps) {
+interface NailGridProps {
+  category1: string;
+}
+
+export default function NailGrid({ category1 }: NailGridProps) {
   const [filter, setFilter] = useState("");
   const [isModalVisible, setIsModalVisible] = useState(false);
   const [selectedImage, setSelectedImage] = useState("");
+  const [nails, setNails] = useState<Nail[]>([]);
   const [sortBy, setSortBy] = useState("all");
 
-  // Combined filtering logic for search and category
-  const filteredProducts = products.filter((product) => {
-    const matchesSearch =
-      !filter || product.name.toLowerCase().includes(filter.toLowerCase());
-    const matchesCategory = category === "all" || product.category === category;
-    const matchesSortCategory =
-      sortBy === "all" ||
-      sortBy === "name-asc" ||
-      sortBy === "name-desc" ||
-      product.category === sortBy;
+  useEffect(() => {
+    const fetchGallery = async () => {
+      try {
+        const data = await GetGallery();
+        console.log("Dữ liệu từ API:", data);
 
-    return matchesSearch && matchesCategory && matchesSortCategory;
-  });
+        const filteredData = data.filter((product: Nail) => product.category1 === category1);
+        console.log("Dữ liệu sau khi lọc:", filteredData);
 
-  // Sort the filtered products
+        setNails(filteredData);
+      } catch (error) {
+        console.error("Lỗi khi lấy dữ liệu gallery:", error);
+      }
+    };
+
+    fetchGallery();
+  }, [category1]);
+
+  // Lọc dữ liệu dựa trên từ khóa tìm kiếm
+  // const filteredProducts = nails.filter((product) =>
+  //   product.name.toLowerCase().includes(filter.toLowerCase())
+  // );
+  const filteredProducts = nails.filter(
+    (nails) =>
+      (category1 === "nail" || nails.category1 === category1) &&
+      (!filter || nails.name.toLowerCase().includes(filter.toLowerCase()))
+  );
+
+  // Sắp xếp dữ liệu
   const sortedProducts = [...filteredProducts].sort((a, b) => {
-    if (sortBy === "name-asc") {
-      return a.name.localeCompare(b.name);
-    }
-    if (sortBy === "name-desc") {
-      return b.name.localeCompare(a.name);
-    }
+    if (sortBy === "name-asc") return a.name.localeCompare(b.name);
+    if (sortBy === "name-desc") return b.name.localeCompare(a.name);
     return 0;
   });
 
@@ -97,6 +76,7 @@ export default function ProductGrid({ category }: ProductGridProps) {
 
   return (
     <div>
+      {/* Thanh tìm kiếm và sắp xếp */}
       <div className="flex justify-between mb-6 px-2">
         <input
           type="text"
@@ -114,12 +94,11 @@ export default function ProductGrid({ category }: ProductGridProps) {
             <SelectItem value="all">Tất cả</SelectItem>
             <SelectItem value="name-asc">Tên A-Z</SelectItem>
             <SelectItem value="name-desc">Tên Z-A</SelectItem>
-            <SelectItem value="mong-tay">Nail Móng Tay</SelectItem>
-            <SelectItem value="mong-chan">Nail Móng Chân</SelectItem>
           </SelectContent>
         </Select>
       </div>
 
+      {/* Grid hiển thị sản phẩm */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {sortedProducts.map((product) => (
           <Card
